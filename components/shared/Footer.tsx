@@ -37,7 +37,7 @@ export default function Footer() {
                         <Link href="/" className="flex items-center space-x-3 mb-6">
                             <div className="relative w-12 h-12">
                                 <Image
-                                    src="/images/logoTerminel.png"
+                                    src="/images/logoTerminel.PNG"
                                     alt="Grupo Terminel Logo"
                                     fill
                                     className="object-contain"

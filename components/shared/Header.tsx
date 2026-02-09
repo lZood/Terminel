@@ -39,7 +39,7 @@ export default function Header() {
                     <Link href="/" className="flex items-center space-x-3 group relative z-10">
                         <div className="relative w-12 h-12 md:w-14 md:h-14 transition-transform duration-300 group-hover:scale-110">
                             <Image
-                                src="/images/logoTerminel.png"
+                                src="/images/logoTerminel.PNG"
                                 alt="Grupo Terminel Logo"
                                 fill
                                 className="object-contain"
