@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Calendar, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { formatDate } from '@/lib/utils'
 
 // Latest 3 articles from the blog
@@ -75,9 +76,11 @@ export default function LatestNews() {
                                 <div className="card-glass overflow-hidden h-full flex flex-col">
                                     {/* Image */}
                                     <div className="relative h-48 bg-gray-200 overflow-hidden">
-                                        <img
+                                        <Image
                                             src={article.imageUrl}
                                             alt={article.title}
+                                            width={600}
+                                            height={400}
                                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                         />
                                         <div className="absolute top-4 left-4">

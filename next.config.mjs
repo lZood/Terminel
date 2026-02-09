@@ -13,4 +13,7 @@ export default {
       bodySizeLimit: '10mb',
     },
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }

@@ -33,7 +33,7 @@ export default function ArticlePage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="font-heading font-bold text-4xl lg:text-5xl text-gray-900 mb-6 leading-tight"
                     >
-                        Grupo Terminel inaugura moderna planta envasadora "Los Valles" en 2026
+                        Grupo Terminel inaugura moderna planta envasadora &ldquo;Los Valles&rdquo; en 2026
                     </motion.h1>
 
                     {/* Meta */}
@@ -83,7 +83,7 @@ export default function ArticlePage() {
                         </h2>
 
                         <p className="text-gray-700 leading-relaxed mb-6">
-                            La planta envasadora "Los Valles" representa nuestro compromiso con la innovación y la
+                            La planta envasadora &ldquo;Los Valles&rdquo; representa nuestro compromiso con la innovación y la
                             excelencia en la agroindustria sinaloense. Esta nueva instalación cuenta con tecnología
                             de punta certificada bajo la norma <strong>ISO 22000:2018</strong>, garantizando los más
                             altos estándares de seguridad alimentaria.
@@ -140,9 +140,9 @@ export default function ArticlePage() {
 
                         <div className="bg-terminel-green/10 border-l-4 border-terminel-green p-6 my-8 rounded-r-lg">
                             <p className="text-gray-900 font-medium italic">
-                                "Esta nueva planta no solo amplía nuestra capacidad productiva, sino que refuerza
+                                &ldquo;Esta nueva planta no solo amplía nuestra capacidad productiva, sino que refuerza
                                 nuestro compromiso de 55 años con los productores de Sinaloa y con la seguridad
-                                alimentaria de México."
+                                alimentaria de México.&rdquo;
                             </p>
                             <p className="text-terminel-green font-semibold mt-2">
                                 — Dirección General, Grupo Terminel
