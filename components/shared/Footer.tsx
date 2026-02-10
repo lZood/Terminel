@@ -1,32 +1,33 @@
-'use client'
-
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, ArrowUpRight } from 'lucide-react'
 
-const footerLinks = {
-    empresa: [
-        { name: 'Nosotros', href: '/nosotros' },
-        { name: 'Servicios', href: '/servicios' },
-        { name: 'Herramientas', href: '/herramientas' },
-        { name: 'Sustentabilidad', href: '/sustentabilidad' },
-        { name: 'Carreras', href: '/carreras' },
-        { name: 'Noticias', href: '/noticias' },
-    ],
-    servicios: [
-        { name: 'Acopio Masivo', href: '/servicios#acopio' },
-        { name: 'Molino de Trigo', href: '/servicios#molino' },
-        { name: 'Planta de Empaque', href: '/servicios#los-valles' },
-        { name: 'Portal Productor', href: '/portal' },
-    ],
-    legal: [
-        { name: 'Aviso de Privacidad', href: '/privacidad' },
-        { name: 'Términos de Uso', href: '/terminos' },
-        { name: 'Ética y Responsabilidad', href: '/nosotros#etica' },
-    ],
-}
-
 export default function Footer() {
+    const t = useTranslations('Footer')
+
+    const footerLinks = {
+        empresa: [
+            { name: t('links.about'), href: '/nosotros' },
+            { name: t('links.services'), href: '/servicios' },
+            { name: t('links.tools'), href: '/herramientas' },
+            { name: t('links.sustainability'), href: '/sustentabilidad' },
+            { name: t('links.careers'), href: '/carreras' },
+            { name: t('links.news'), href: '/noticias' },
+        ],
+        servicios: [
+            { name: t('links.storage'), href: '/servicios#acopio' },
+            { name: t('links.mill'), href: '/servicios#molino' },
+            { name: t('links.packaging'), href: '/servicios#los-valles' },
+            { name: t('links.portal'), href: '/portal' },
+        ],
+        legal: [
+            { name: t('links.privacy'), href: '/privacidad' },
+            { name: t('links.terms'), href: '/terminos' },
+            { name: t('links.ethics'), href: '/nosotros#etica' },
+        ],
+    }
+
     return (
         <footer className="bg-terminel-green text-white">
             {/* Top Footer */}
@@ -50,9 +51,7 @@ export default function Footer() {
                             </div>
                         </Link>
                         <p className="text-gray-300 mb-8 leading-relaxed text-sm">
-                            Liderando la modernización agrícola en Sinaloa desde 1970.
-                            Comprometidos con el éxito de nuestros productores y la
-                            excelencia agroindustrial.
+                            {t('brand_desc')}
                         </p>
                         <div className="flex space-x-4">
                             <a href="#" className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
@@ -69,7 +68,7 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="font-heading font-bold text-lg mb-6 text-white uppercase tracking-wider">Empresa</h4>
+                        <h4 className="font-heading font-bold text-lg mb-6 text-white uppercase tracking-wider">{t('columns.company')}</h4>
                         <ul className="space-y-4">
                             {footerLinks.empresa.map((link) => (
                                 <li key={link.name}>
@@ -84,7 +83,7 @@ export default function Footer() {
 
                     {/* Services Links */}
                     <div>
-                        <h4 className="font-heading font-bold text-lg mb-6 text-white uppercase tracking-wider">Servicios</h4>
+                        <h4 className="font-heading font-bold text-lg mb-6 text-white uppercase tracking-wider">{t('columns.services')}</h4>
                         <ul className="space-y-4">
                             {footerLinks.servicios.map((link) => (
                                 <li key={link.name}>
@@ -99,7 +98,7 @@ export default function Footer() {
 
                     {/* Contact Info */}
                     <div>
-                        <h4 className="font-heading font-bold text-lg mb-6 text-white uppercase tracking-wider">Contacto</h4>
+                        <h4 className="font-heading font-bold text-lg mb-6 text-white uppercase tracking-wider">{t('columns.contact')}</h4>
                         <ul className="space-y-6">
                             <li className="flex items-start">
                                 <MapPin className="text-harvest-gold mr-3 flex-shrink-0" size={20} />
@@ -129,7 +128,7 @@ export default function Footer() {
             <div className="border-t border-white/10">
                 <div className="container-custom py-8">
                     <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-                        <p>© {new Date().getFullYear()} Grupo Terminel. Todos los derechos reservados.</p>
+                        <p>© {new Date().getFullYear()} Grupo Terminel. {t('copyright')}</p>
                         <div className="flex space-x-6 mt-4 md:mt-0">
                             {footerLinks.legal.map((link) => (
                                 <Link key={link.name} href={link.href} className="hover:text-white transition-colors">

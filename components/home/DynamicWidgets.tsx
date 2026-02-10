@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Cloud, Droplets, TrendingUp, TrendingDown } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
 interface WidgetData {
     weather: {
@@ -53,6 +54,8 @@ export default function DynamicWidgets() {
         return () => clearInterval(interval)
     }, [])
 
+    const t = useTranslations('DynamicWidgets')
+
     if (loading) {
         return (
             <section className="py-8 bg-gray-50 border-y border-gray-200">
@@ -84,7 +87,7 @@ export default function DynamicWidgets() {
                         <div className="flex items-center justify-between mb-3">
                             <h3 className="font-semibold text-gray-700 flex items-center space-x-2">
                                 <Cloud size={20} className="text-terminel-green" />
-                                <span>Clima Guasave</span>
+                                <span>{t('weather_title')}</span>
                             </h3>
                         </div>
                         {data.weather ? (
@@ -95,11 +98,11 @@ export default function DynamicWidgets() {
                                 <div className="text-sm text-gray-600 capitalize">{data.weather.condition}</div>
                                 <div className="flex items-center space-x-2 mt-2 text-xs text-gray-500">
                                     <Droplets size={14} />
-                                    <span>Humedad: {data.weather.humidity}%</span>
+                                    <span>{t('humidity')}: {data.weather.humidity}%</span>
                                 </div>
                             </div>
                         ) : (
-                            <div className="text-gray-400">No disponible</div>
+                            <div className="text-gray-400">{t('not_available')}</div>
                         )}
                     </motion.div>
 
@@ -111,7 +114,7 @@ export default function DynamicWidgets() {
                         transition={{ delay: 0.1 }}
                         className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
                     >
-                        <h3 className="font-semibold text-gray-700 mb-3">Nivel de Presas</h3>
+                        <h3 className="font-semibold text-gray-700 mb-3">{t('dam_level_title')}</h3>
                         {data.damLevel !== null ? (
                             <div>
                                 <div className="text-4xl font-bold text-terminel-green mb-3">
@@ -126,10 +129,10 @@ export default function DynamicWidgets() {
                                         className="h-full bg-gradient-to-r from-terminel-green to-terminel-green-600 rounded-full"
                                     />
                                 </div>
-                                <p className="text-xs text-gray-500 mt-2">Capacidad regional promedio</p>
+                                <p className="text-xs text-gray-500 mt-2">{t('regional_capacity')}</p>
                             </div>
                         ) : (
-                            <div className="text-gray-400">No disponible</div>
+                            <div className="text-gray-400">{t('not_available')}</div>
                         )}
                     </motion.div>
 
@@ -141,13 +144,13 @@ export default function DynamicWidgets() {
                         transition={{ delay: 0.2 }}
                         className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
                     >
-                        <h3 className="font-semibold text-gray-700 mb-3">Precio Maíz (CBOT)</h3>
+                        <h3 className="font-semibold text-gray-700 mb-3">{t('cbot_title')}</h3>
                         {data.cbotPrice ? (
                             <div>
                                 <div className="text-4xl font-bold text-terminel-green mb-1">
                                     ${data.cbotPrice.price}
                                 </div>
-                                <div className="text-sm text-gray-600 mb-2">USD por bushel</div>
+                                <div className="text-sm text-gray-600 mb-2">{t('usd_per_bushel')}</div>
                                 <div
                                     className={`flex items-center space-x-1 text-sm font-semibold ${data.cbotPrice.change >= 0 ? 'text-green-600' : 'text-red-600'
                                         }`}
@@ -164,7 +167,7 @@ export default function DynamicWidgets() {
                                 </div>
                             </div>
                         ) : (
-                            <div className="text-gray-400">No disponible</div>
+                            <div className="text-gray-400">{t('not_available')}</div>
                         )}
                     </motion.div>
                 </div>

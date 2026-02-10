@@ -3,19 +3,18 @@
 import { motion } from 'framer-motion'
 import { Calendar, ArrowRight, Sparkles } from 'lucide-react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 const featuredArticle = {
     id: 1,
-    title: 'Grupo Terminel inaugura moderna planta envasadora "Los Valles" en 2026',
-    excerpt: 'Con una inversión superior a los $50 millones de pesos, la nueva planta certificada bajo ISO 22000:2018 revolucionará nuestro proceso de empaquetado de granos básicos, ampliando nuestra capacidad de producción y generando más de 100 empleos directos en la región.',
-    category: 'Empresa',
     date: '2026-02-08',
     image: '/api/placeholder/1200/600',
-    author: 'Grupo Terminel',
     readTime: '5 min',
 }
 
 export default function FeaturedNews() {
+    const t = useTranslations('FeaturedNews')
+
     return (
         <section className="section-spacing bg-white">
             <div className="container-custom">
@@ -28,10 +27,10 @@ export default function FeaturedNews() {
                 >
                     <div className="inline-flex items-center space-x-2 bg-harvest-gold/20 text-harvest-gold-700 px-6 py-3 rounded-full mb-6">
                         <Sparkles size={20} />
-                        <span className="font-semibold">Destacado</span>
+                        <span className="font-semibold">{t('badge')}</span>
                     </div>
                     <h2 className="font-heading font-bold text-3xl lg:text-5xl text-terminel-green mb-4">
-                        Lo Más Reciente
+                        {t('title')}
                     </h2>
                 </motion.div>
 
@@ -54,7 +53,7 @@ export default function FeaturedNews() {
                             {/* Category Badge */}
                             <div className="absolute top-4 left-4">
                                 <span className="bg-terminel-green text-white px-4 py-2 rounded-lg font-semibold text-sm shadow-lg">
-                                    {featuredArticle.category}
+                                    {t('article.category')}
                                 </span>
                             </div>
                         </div>
@@ -65,36 +64,32 @@ export default function FeaturedNews() {
                             <div className="flex items-center space-x-4 text-sm text-gray-600 mb-4">
                                 <div className="flex items-center space-x-1">
                                     <Calendar size={16} className="text-terminel-green" />
-                                    <span>{new Date(featuredArticle.date).toLocaleDateString('es-MX', {
-                                        year: 'numeric',
-                                        month: 'long',
-                                        day: 'numeric'
-                                    })}</span>
+                                    <span>{new Date(featuredArticle.date).toLocaleDateString()}</span>
                                 </div>
                                 <span>•</span>
-                                <span>{featuredArticle.readTime} de lectura</span>
+                                <span>{t('read_time', { time: featuredArticle.readTime })}</span>
                             </div>
 
                             {/* Title */}
                             <h3 className="font-heading font-bold text-2xl lg:text-4xl text-gray-900 mb-4 group-hover:text-terminel-green transition-colors">
-                                {featuredArticle.title}
+                                {t('article.title')}
                             </h3>
 
                             {/* Excerpt */}
                             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                                {featuredArticle.excerpt}
+                                {t('article.excerpt')}
                             </p>
 
                             {/* Author & CTA */}
                             <div className="flex items-center justify-between">
                                 <div className="text-sm text-gray-600">
-                                    Por <strong className="text-terminel-green">{featuredArticle.author}</strong>
+                                    {t('by')} <strong className="text-terminel-green">{t('article.author')}</strong>
                                 </div>
                                 <Link
                                     href={`/noticias/${featuredArticle.id}`}
                                     className="inline-flex items-center space-x-2 bg-terminel-green hover:bg-terminel-green-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 active:scale-95 group/btn"
                                 >
-                                    <span>Leer más</span>
+                                    <span>{t('read_more')}</span>
                                     <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                                 </Link>
                             </div>

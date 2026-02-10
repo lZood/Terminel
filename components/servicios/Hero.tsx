@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { Warehouse } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 export default function Hero() {
+    const t = useTranslations('ServicesHero')
+
     return (
         <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-terminel-green to-terminel-green-800">
             {/* Background Pattern */}
@@ -22,16 +25,15 @@ export default function Hero() {
                     >
                         <div className="inline-flex items-center space-x-2 bg-harvest-gold text-terminel-green px-6 py-2 rounded-full font-semibold text-sm mb-6">
                             <Warehouse size={18} />
-                            <span>Servicios Integrales</span>
+                            <span>{t('badge')}</span>
                         </div>
 
                         <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-7xl mb-6 leading-tight">
-                            Soluciones Completas para el Campo
+                            {t('title')}
                         </h1>
 
                         <p className="text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-3xl mx-auto">
-                            Desde el acopio hasta la industrialización, ofrecemos una cadena de valor
-                            completa que maximiza tu rentabilidad
+                            {t('subtitle')}
                         </p>
                     </motion.div>
                 </div>

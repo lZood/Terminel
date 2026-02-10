@@ -2,36 +2,41 @@
 
 import { motion } from 'framer-motion'
 import { Warehouse, Factory, PackageCheck, ArrowRight } from 'lucide-react'
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
-const services = [
-    {
-        icon: Warehouse,
-        title: 'Acopio Masivo',
-        description: 'Capacidad de almacenamiento de 110,000 toneladas con infraestructura estratégica en todo Sinaloa.',
-        capacity: '110,000 Ton',
-        features: ['Maíz Blanco', 'Garbanzo', 'Frijol', 'Trigo'],
-        color: 'from-terminel-green to-terminel-green-700',
-    },
-    {
-        icon: Factory,
-        title: 'Molino Hernando de Villafañe',
-        description: 'Producción de harinas de trigo de alta calidad desde 1987 con marcas reconocidas regionalmente.',
-        capacity: '28,000 Ton',
-        features: ['Rica Sinaloa', 'Doña Güera', 'Harinas Premium'],
-        color: 'from-harvest-gold-500 to-harvest-gold-700',
-    },
-    {
-        icon: PackageCheck,
-        title: 'Planta Los Valles',
-        description: 'Nueva instalación 2026 para limpieza, secado y empaquetado con tecnología de vanguardia.',
-        capacity: '8 Ton/Hora',
-        features: ['Garbanzo', 'Frijol', 'Trigo', 'Empaquetado 25kg'],
-        color: 'from-blue-600 to-blue-800',
-    },
-]
+
 
 export default function ServicesOverview() {
+    const t = useTranslations('ServicesOverview')
+
+    const servicesData = [
+        {
+            icon: Warehouse,
+            title: t('services.acopio_title'),
+            description: t('services.acopio_desc'),
+            capacity: '110,000 Ton',
+            features: t('services.acopio_features').split(','),
+            color: 'from-terminel-green to-terminel-green-700',
+        },
+        {
+            icon: Factory,
+            title: t('services.molino_title'),
+            description: t('services.molino_desc'),
+            capacity: '28,000 Ton',
+            features: t('services.molino_features').split(','),
+            color: 'from-harvest-gold-500 to-harvest-gold-700',
+        },
+        {
+            icon: PackageCheck,
+            title: t('services.planta_title'),
+            description: t('services.planta_desc'),
+            capacity: '8 Ton/Hora',
+            features: t('services.planta_features').split(','),
+            color: 'from-blue-600 to-blue-800',
+        },
+    ]
+
     return (
         <section className="section-spacing bg-gradient-to-br from-gray-50 to-gray-100">
             <div className="container-custom">
@@ -43,17 +48,16 @@ export default function ServicesOverview() {
                     className="text-center mb-16"
                 >
                     <h2 className="font-heading font-bold text-3xl lg:text-5xl text-terminel-green mb-4">
-                        Servicios Integrales
+                        {t('title')}
                     </h2>
                     <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Desde el acopio hasta la industrialización, ofrecemos soluciones completas
-                        para maximizar el valor de tu producción
+                        {t('description')}
                     </p>
                 </motion.div>
 
                 {/* Services Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-                    {services.map((service, index) => (
+                    {servicesData.map((service, index) => (
                         <motion.div
                             key={service.title}
                             initial={{ opacity: 0, y: 30 }}
@@ -97,7 +101,7 @@ export default function ServicesOverview() {
                                         href="/servicios"
                                         className="inline-flex items-center space-x-2 text-terminel-green font-semibold hover:text-terminel-green-600 transition-colors group-hover:translate-x-1 transform duration-200"
                                     >
-                                        <span>Conoce más</span>
+                                        <span>{t('learn_more')}</span>
                                         <ArrowRight size={16} />
                                     </Link>
                                 </div>
@@ -114,17 +118,16 @@ export default function ServicesOverview() {
                     className="text-center bg-white rounded-2xl p-8 lg:p-12 shadow-lg"
                 >
                     <h3 className="font-heading font-bold text-2xl lg:text-3xl text-gray-900 mb-4">
-                        Servicios Complementarios
+                        {t('complementary_title')}
                     </h3>
                     <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                        Financiamiento agrícola, asesoría técnica, distribución de insumos (Asgrow, Yara),
-                        y fondos de aseguramiento para garantizar el éxito de tu cosecha
+                        {t('complementary_desc')}
                     </p>
                     <Link
                         href="/servicios"
                         className="btn-primary inline-flex items-center space-x-2"
                     >
-                        <span>Ver todos los servicios</span>
+                        <span>{t('view_all')}</span>
                         <ArrowRight size={18} />
                     </Link>
                 </motion.div>

@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { Mail, Linkedin } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 export default function Leadership() {
+    const t = useTranslations('Leadership')
+
     return (
         <section className="section-spacing bg-gradient-to-br from-gray-50 to-white">
             <div className="container-custom">
@@ -14,10 +17,10 @@ export default function Leadership() {
                     className="text-center mb-16"
                 >
                     <h2 className="font-heading font-bold text-3xl lg:text-5xl text-terminel-green mb-4">
-                        Liderazgo
+                        {t('title')}
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Visión familiar que trasciende generaciones
+                        {t('subtitle')}
                     </p>
                 </motion.div>
 
@@ -40,29 +43,24 @@ export default function Leadership() {
                             {/* Content */}
                             <div className="p-8 lg:p-12 flex flex-col justify-center">
                                 <div className="inline-block bg-harvest-gold text-terminel-green px-4 py-1.5 rounded-full text-sm font-semibold mb-4 self-start">
-                                    Director General
+                                    {t('alejandro.role')}
                                 </div>
 
                                 <h3 className="font-heading font-bold text-3xl lg:text-4xl text-gray-900 mb-4">
-                                    Alejandro Terminel Rojo
+                                    {t('alejandro.name')}
                                 </h3>
 
                                 <p className="text-gray-700 leading-relaxed mb-6 text-lg">
-                                    Hijo del fundador Enrique Terminel Fonseca, Alejandro lidera la segunda generación
-                                    del Grupo Terminel con una visión clara: agregar valor más allá del acopio tradicional
-                                    y fortalecer el campo sinaloense.
+                                    {t('alejandro.bio_1')}
                                 </p>
 
                                 <p className="text-gray-600 leading-relaxed mb-6">
-                                    Bajo su dirección, la empresa ha alcanzado hitos significativos como la inauguración
-                                    de la Planta Los Valles, la certificación Great Place to Work, y la expansión de
-                                    exportaciones de garbanzo a más de 15 países.
+                                    {t('alejandro.bio_2')}
                                 </p>
 
                                 <div className="border-t border-gray-200 pt-6">
                                     <p className="text-sm text-gray-500 italic mb-4">
-                                        "Construir Los Valles cumplió el sueño de mi padre de generar más valor para nuestros
-                                        productores. Seguimos comprometidos con el desarrollo agrícola de Sinaloa."
+                                        {t('alejandro.quote')}
                                     </p>
                                 </div>
 
@@ -73,7 +71,7 @@ export default function Leadership() {
                                         className="flex items-center space-x-2 text-terminel-green hover:text-terminel-green-600 transition-colors"
                                     >
                                         <Mail size={18} />
-                                        <span className="text-sm">Contacto</span>
+                                        <span className="text-sm">{t('contact')}</span>
                                     </a>
                                     <a
                                         href="#"
@@ -102,17 +100,14 @@ export default function Leadership() {
                             </div>
                             <div className="flex-1">
                                 <h3 className="font-heading font-bold text-2xl text-gray-900 mb-2">
-                                    Enrique Terminel Fonseca
+                                    {t('enrique.name')}
                                 </h3>
-                                <div className="text-sm text-gray-500 mb-4">Fundador (1970)</div>
+                                <div className="text-sm text-gray-500 mb-4">{t('enrique.role')}</div>
                                 <p className="text-gray-700 leading-relaxed mb-4">
-                                    Visionario emprendedor que en los años 70 identificó el potencial agrícola del Valle
-                                    de Guasave. Con apoyo de colaboradores locales, inició la compra-venta de granos que
-                                    con el tiempo se consolidó como el actual Grupo Terminel.
+                                    {t('enrique.bio_1')}
                                 </p>
                                 <p className="text-gray-600 leading-relaxed">
-                                    Su legado incluye la fundación del Molino Hernando de Villafañe en 1987 y las marcas
-                                    propias "La Trinidad" y "Don Enrique", que hoy son sinónimo de calidad en la región.
+                                    {t('enrique.bio_2')}
                                 </p>
                             </div>
                         </div>

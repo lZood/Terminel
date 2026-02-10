@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Calculator, TrendingUp, DollarSign, Wheat, ArrowRight } from 'lucide-react'
 import { formatCurrency, formatNumber } from '@/lib/utils'
+import { useTranslations } from 'next-intl'
 
 // Chickpea SVG Component (matching AcopioSection)
 const ChickpeaIcon = () => (
@@ -17,27 +18,27 @@ const ChickpeaIcon = () => (
 
 interface CropOption {
     id: string
-    name: string
     icon: string | 'chickpea'
     avgYield: number // ton/ha
     unit: string
 }
 
 const crops: CropOption[] = [
-    { id: 'maiz', name: 'Maíz Blanco', icon: '🌽', avgYield: 10.5, unit: 'ton/ha' },
-    { id: 'garbanzo', name: 'Garbanzo', icon: 'chickpea', avgYield: 2.8, unit: 'ton/ha' },
-    { id: 'frijol', name: 'Frijol', icon: '🫘', avgYield: 2.2, unit: 'ton/ha' },
-    { id: 'trigo', name: 'Trigo', icon: '🌾', avgYield: 6.5, unit: 'ton/ha' },
+    { id: 'maiz', icon: '🌽', avgYield: 10.5, unit: 'ton/ha' },
+    { id: 'garbanzo', icon: 'chickpea', avgYield: 2.8, unit: 'ton/ha' },
+    { id: 'frijol', icon: '🫘', avgYield: 2.2, unit: 'ton/ha' },
+    { id: 'trigo', icon: '🌾', avgYield: 6.5, unit: 'ton/ha' },
 ]
 
 interface SimulationResults {
     totalProduction: number
     grossRevenue: number
     pricePerTon: number
-    cropName: string
+    cropId: string
 }
 
 export default function ProfitabilitySimulator() {
+    const t = useTranslations('ProfitabilitySimulator')
     const [selectedCrop, setSelectedCrop] = useState<string>('maiz')
     const [hectares, setHectares] = useState<string>('')
     const [customYield, setCustomYield] = useState<string>('')
@@ -64,7 +65,7 @@ export default function ProfitabilitySimulator() {
 
     const handleCalculate = () => {
         if (!hectares || parseFloat(hectares) <= 0) {
-            alert('Por favor ingresa un número válido de hectáreas')
+            alert(t('form.alert_hectares'))
             return
         }
 
@@ -99,7 +100,7 @@ export default function ProfitabilitySimulator() {
                 totalProduction,
                 grossRevenue,
                 pricePerTon,
-                cropName: currentCrop.name,
+                cropId: currentCrop.id,
             })
             setLoading(false)
         }, 800)
@@ -117,15 +118,15 @@ export default function ProfitabilitySimulator() {
                 >
                     <div className="inline-flex items-center space-x-2 bg-harvest-gold/20 text-harvest-gold-700 px-4 py-2 rounded-full font-semibold text-sm mb-6">
                         <Calculator size={18} />
-                        <span>Simulador de Rentabilidad</span>
+                        <span>{t('badge')}</span>
                     </div>
 
                     <h2 className="font-heading font-bold text-3xl lg:text-5xl text-terminel-green mb-4">
-                        Calcula tu Rentabilidad
+                        {t('title')}
                     </h2>
 
                     <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Estima tu producción y rendimiento económico con base en precios actuales del mercado
+                        {t('description')}
                     </p>
                 </motion.div>
 
@@ -139,13 +140,13 @@ export default function ProfitabilitySimulator() {
                             className="card-glass p-8"
                         >
                             <h3 className="font-heading font-semibold text-xl text-gray-900 mb-6">
-                                Datos de tu Cultivo
+                                {t('form.title')}
                             </h3>
 
                             {/* Crop Selection */}
                             <div className="mb-6">
                                 <label className="block text-sm font-medium text-gray-700 mb-3">
-                                    Tipo de Cultivo
+                                    {t('form.crop_label')}
                                 </label>
                                 <div className="grid grid-cols-2 gap-3">
                                     {crops.map((crop) => (
@@ -162,7 +163,7 @@ export default function ProfitabilitySimulator() {
                                             ) : (
                                                 <span className="text-2xl">{crop.icon}</span>
                                             )}
-                                            <span className="text-sm font-medium text-gray-900">{crop.name}</span>
+                                            <span className="text-sm font-medium text-gray-900">{t(`crops.${crop.id}`)}</span>
                                         </button>
                                     ))}
                                 </div>
@@ -171,7 +172,7 @@ export default function ProfitabilitySimulator() {
                             {/* Hectares */}
                             <div className="mb-6">
                                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                                    Hectáreas Cultivadas
+                                    {t('form.hectares_label')}
                                 </label>
                                 <input
                                     type="number"
@@ -179,7 +180,7 @@ export default function ProfitabilitySimulator() {
                                     step="0.1"
                                     value={hectares}
                                     onChange={(e) => setHectares(e.target.value)}
-                                    placeholder="Ej: 50"
+                                    placeholder={t('form.hectares_placeholder')}
                                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-terminel-green focus:ring-2 focus:ring-terminel-green/20 outline-none transition-all"
                                 />
                             </div>
@@ -187,7 +188,7 @@ export default function ProfitabilitySimulator() {
                             {/* Expected Yield */}
                             <div className="mb-6">
                                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                                    Rendimiento Esperado (ton/ha)
+                                    {t('form.yield_label')}
                                 </label>
                                 <input
                                     type="number"
@@ -195,18 +196,22 @@ export default function ProfitabilitySimulator() {
                                     step="0.1"
                                     value={customYield}
                                     onChange={(e) => setCustomYield(e.target.value)}
-                                    placeholder={`Promedio regional: ${currentCrop.avgYield} ton/ha`}
+                                    placeholder={t('form.yield_placeholder', { yield: currentCrop.avgYield })}
                                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-terminel-green focus:ring-2 focus:ring-terminel-green/20 outline-none transition-all"
                                 />
                                 <p className="text-xs text-gray-500 mt-1">
-                                    Promedio regional: {currentCrop.avgYield} {currentCrop.unit}
+                                    {t.rich('form.yield_avg', {
+                                        yield: currentCrop.avgYield,
+                                        unit: currentCrop.unit,
+                                        bold: (chunks) => <strong>{chunks}</strong>
+                                    })}
                                 </p>
                             </div>
 
                             {/* Price Override */}
                             <div className="mb-6">
                                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                                    Precio por Tonelada (MXN) - Opcional
+                                    {t('form.price_label')}
                                 </label>
                                 <input
                                     type="number"
@@ -215,14 +220,14 @@ export default function ProfitabilitySimulator() {
                                     value={customPrice}
                                     onChange={(e) => setCustomPrice(e.target.value)}
                                     placeholder={selectedCrop === 'maiz' && cbotPrice
-                                        ? `Precio actual: ${formatCurrency(cbotPrice)}`
-                                        : 'Dejar en blanco para usar precio actual'
+                                        ? t('form.price_current', { price: formatCurrency(cbotPrice) })
+                                        : t('form.price_placeholder')
                                     }
                                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-terminel-green focus:ring-2 focus:ring-terminel-green/20 outline-none transition-all"
                                 />
                                 {selectedCrop === 'maiz' && cbotPrice && (
                                     <p className="text-xs text-terminel-green mt-1">
-                                        💹 Precio CBOT actual: {formatCurrency(cbotPrice)}/ton
+                                        {t('form.cbot_current', { price: formatCurrency(cbotPrice) })}
                                     </p>
                                 )}
                             </div>
@@ -236,12 +241,12 @@ export default function ProfitabilitySimulator() {
                                 {loading ? (
                                     <>
                                         <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                                        <span>Calculando...</span>
+                                        <span>{t('form.calculating_button')}</span>
                                     </>
                                 ) : (
                                     <>
                                         <Calculator size={20} />
-                                        <span>Calcular Rentabilidad</span>
+                                        <span>{t('form.calculate_button')}</span>
                                     </>
                                 )}
                             </button>
@@ -263,12 +268,12 @@ export default function ProfitabilitySimulator() {
                                     >
                                         <div className="flex items-center space-x-2 mb-4">
                                             <TrendingUp size={24} />
-                                            <span className="font-semibold">Estimación de Rendimiento</span>
+                                            <span className="font-semibold">{t('results.title')}</span>
                                         </div>
                                         <div className="text-5xl font-heading font-bold mb-2">
                                             {formatCurrency(results.grossRevenue)}
                                         </div>
-                                        <p className="text-white/90 text-sm">Ingresos Brutos Estimados</p>
+                                        <p className="text-white/90 text-sm">{t('results.gross_revenue')}</p>
                                     </motion.div>
 
                                     <motion.div
@@ -279,11 +284,11 @@ export default function ProfitabilitySimulator() {
                                     >
                                         <div className="flex items-start justify-between mb-4">
                                             <div>
-                                                <div className="text-sm text-gray-600 mb-1">Producción Total</div>
+                                                <div className="text-sm text-gray-600 mb-1">{t('results.total_production')}</div>
                                                 <div className="text-3xl font-heading font-bold text-terminel-green">
                                                     {formatNumber(results.totalProduction)}
                                                 </div>
-                                                <div className="text-sm text-gray-600">toneladas de {results.cropName}</div>
+                                                <div className="text-sm text-gray-600">{t('results.tons_of', { crop: t(`crops.${results.cropId}`) })}</div>
                                             </div>
                                             <Wheat size={40} className="text-harvest-gold" />
                                         </div>
@@ -297,11 +302,11 @@ export default function ProfitabilitySimulator() {
                                     >
                                         <div className="flex items-start justify-between mb-4">
                                             <div>
-                                                <div className="text-sm text-gray-600 mb-1">Precio por Tonelada</div>
+                                                <div className="text-sm text-gray-600 mb-1">{t('results.price_per_ton')}</div>
                                                 <div className="text-3xl font-heading font-bold text-gray-900">
                                                     {formatCurrency(results.pricePerTon)}
                                                 </div>
-                                                <div className="text-sm text-gray-600">MXN/tonelada</div>
+                                                <div className="text-sm text-gray-600">{t('results.mxn_per_ton')}</div>
                                             </div>
                                             <DollarSign size={40} className="text-harvest-gold" />
                                         </div>
@@ -315,13 +320,13 @@ export default function ProfitabilitySimulator() {
                                         className="bg-harvest-gold/10 border-2 border-harvest-gold rounded-xl p-6 text-center"
                                     >
                                         <p className="text-gray-900 mb-4 font-medium">
-                                            ¿Necesitas financiamiento para tu ciclo agrícola?
+                                            {t('results.cta_text')}
                                         </p>
                                         <a
                                             href="/servicios#financiamiento"
                                             className="inline-flex items-center space-x-2 bg-gradient-harvest text-terminel-green font-bold px-6 py-3 rounded-lg hover:opacity-90 transition-all active:scale-95"
                                         >
-                                            <span>Solicitar Crédito de Habilitación</span>
+                                            <span>{t('results.cta_button')}</span>
                                             <ArrowRight size={18} />
                                         </a>
                                     </motion.div>
@@ -332,7 +337,7 @@ export default function ProfitabilitySimulator() {
                                         <Calculator size={40} className="text-gray-400" />
                                     </div>
                                     <p className="text-gray-600">
-                                        Completa los datos de tu cultivo para ver tu estimación de rentabilidad
+                                        {t('results.empty_state')}
                                     </p>
                                 </div>
                             )}

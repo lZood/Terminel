@@ -4,12 +4,13 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Calendar, Clock, ArrowRight, Filter, Building2, TrendingUp, CloudRain, Award } from 'lucide-react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+
+type CategoryKey = 'all' | 'company' | 'trends' | 'weather_alerts' | 'success_stories'
 
 interface NewsArticle {
     id: number
-    title: string
-    excerpt: string
-    category: 'Empresa' | 'Tendencias' | 'Alertas Climáticas' | 'Casos de Éxito'
+    category: Exclude<CategoryKey, 'all'>
     date: string
     image: string
     readTime: string
@@ -19,9 +20,7 @@ interface NewsArticle {
 const articles: NewsArticle[] = [
     {
         id: 2,
-        title: 'Grupo Terminel firma alianza estratégica con Asgrow para temporada 2026',
-        excerpt: 'Fortalecemos nuestra oferta de semillas premium para productores con las mejores variedades de maíz blanco adaptadas al clima de Sinaloa.',
-        category: 'Empresa',
+        category: 'company',
         date: '2026-02-05',
         image: '/api/placeholder/600/400',
         readTime: '3 min',
@@ -29,9 +28,7 @@ const articles: NewsArticle[] = [
     },
     {
         id: 3,
-        title: 'Modernización de silos en Bamoa: Mayor capacidad de almacenamiento',
-        excerpt: 'Inversión de $15 millones mejora infraestructura y aumenta capacidad en 20,000 toneladas adicionales.',
-        category: 'Empresa',
+        category: 'company',
         date: '2026-02-01',
         image: '/api/placeholder/600/400',
         readTime: '4 min',
@@ -39,9 +36,7 @@ const articles: NewsArticle[] = [
     },
     {
         id: 4,
-        title: 'Productores locales superan expectativas de cosecha de garbanzo 2025',
-        excerpt: 'Don Miguel Torres de Ruiz Cortines logró rendimiento de 3.2 ton/ha con asesoría técnica de nuestro equipo agrónomo.',
-        category: 'Casos de Éxito',
+        category: 'success_stories',
         date: '2026-01-28',
         image: '/api/placeholder/600/400',
         readTime: '5 min',
@@ -49,9 +44,7 @@ const articles: NewsArticle[] = [
     },
     {
         id: 5,
-        title: 'Pronóstico favorable: Temporada de lluvias beneficiará ciclo primavera-verano',
-        excerpt: 'Análisis climático regional indica condiciones óptimas para maíz y frijol en los próximos meses.',
-        category: 'Alertas Climáticas',
+        category: 'weather_alerts',
         date: '2026-01-25',
         image: '/api/placeholder/600/400',
         readTime: '3 min',
@@ -59,9 +52,7 @@ const articles: NewsArticle[] = [
     },
     {
         id: 6,
-        title: 'Precio internacional del maíz alcanza máximo histórico en enero',
-        excerpt: 'Mercados internacionales favorecen exportaciones mexicanas. Análisis de oportunidades para productores.',
-        category: 'Tendencias',
+        category: 'trends',
         date: '2026-01-20',
         image: '/api/placeholder/600/400',
         readTime: '6 min',
@@ -69,9 +60,7 @@ const articles: NewsArticle[] = [
     },
     {
         id: 7,
-        title: 'Grupo Terminel recibe certificación Great Place to Work 2024',
-        excerpt: 'Reconocimiento destaca nuestro compromiso con el bienestar de más de 200 colaboradores en toda la región.',
-        category: 'Empresa',
+        category: 'company',
         date: '2026-01-15',
         image: '/api/placeholder/600/400',
         readTime: '4 min',
@@ -79,9 +68,7 @@ const articles: NewsArticle[] = [
     },
     {
         id: 8,
-        title: 'Nuevas capacitaciones digitales para productores: Portal Terminel 2.0',
-        excerpt: 'Lanzamos programa de formación online gratuito sobre tecnología agrícola, manejo de siembra y comercialización para todos nuestros aliados.',
-        category: 'Empresa',
+        category: 'company',
         date: '2026-01-12',
         image: '/api/placeholder/600/400',
         readTime: '4 min',
@@ -89,9 +76,7 @@ const articles: NewsArticle[] = [
     },
     {
         id: 9,
-        title: 'Celebramos el Día del Productor con más de 500 agricultores de la región',
-        excerpt: 'Evento anual reunió a productores de Guasave, Los Mochis y Bamoa con conferencias magistrales sobre innovación agrícola y networking.',
-        category: 'Empresa',
+        category: 'company',
         date: '2026-01-08',
         image: '/api/placeholder/600/400',
         readTime: '5 min',
@@ -99,9 +84,7 @@ const articles: NewsArticle[] = [
     },
     {
         id: 10,
-        title: 'Alerta: Recomendaciones ante posible periodo de sequía en marzo',
-        excerpt: 'Nuestro equipo meteorológico sugiere estrategias de riego eficiente y variedades resistentes para mitigar riesgos climáticos.',
-        category: 'Alertas Climáticas',
+        category: 'weather_alerts',
         date: '2026-01-05',
         image: '/api/placeholder/600/400',
         readTime: '6 min',
@@ -109,9 +92,7 @@ const articles: NewsArticle[] = [
     },
     {
         id: 11,
-        title: 'Exportación récord: Garbanzo sinaloense rompe cifras en mercados asiáticos',
-        excerpt: 'India y Turquía incrementan demanda 35% respecto al año anterior. Oportunidad histórica para productores locales.',
-        category: 'Tendencias',
+        category: 'trends',
         date: '2025-12-28',
         image: '/api/placeholder/600/400',
         readTime: '5 min',
@@ -119,9 +100,7 @@ const articles: NewsArticle[] = [
     },
     {
         id: 12,
-        title: 'Historia de éxito: Familia Mendoza duplica producción con agricultura de precisión',
-        excerpt: 'Implementación de tecnología GPS y sensores de humedad aumentó rendimiento de 8 a 17 ton/ha en cultivo de maíz.',
-        category: 'Casos de Éxito',
+        category: 'success_stories',
         date: '2025-12-20',
         image: '/api/placeholder/600/400',
         readTime: '7 min',
@@ -129,9 +108,7 @@ const articles: NewsArticle[] = [
     },
     {
         id: 13,
-        title: 'Grupo Terminel lanza programa de becas para hijos de productores',
-        excerpt: 'Inversión de $2 millones en educación: 50 becas completas para carreras en agronomía, ingeniería y administración.',
-        category: 'Empresa',
+        category: 'company',
         date: '2025-12-15',
         image: '/api/placeholder/600/400',
         readTime: '4 min',
@@ -139,25 +116,26 @@ const articles: NewsArticle[] = [
     },
 ]
 
-const categories = [
-    { name: 'Todas', icon: Filter, color: 'text-gray-700' },
-    { name: 'Empresa', icon: Building2, color: 'text-terminel-green' },
-    { name: 'Tendencias', icon: TrendingUp, color: 'text-blue-600' },
-    { name: 'Alertas Climáticas', icon: CloudRain, color: 'text-orange-600' },
-    { name: 'Casos de Éxito', icon: Award, color: 'text-purple-600' },
+const categoriesConfig: { key: CategoryKey, icon: any }[] = [
+    { key: 'all', icon: Filter },
+    { key: 'company', icon: Building2 },
+    { key: 'trends', icon: TrendingUp },
+    { key: 'weather_alerts', icon: CloudRain },
+    { key: 'success_stories', icon: Award },
 ]
 
-const categoryColors: Record<string, string> = {
-    'Empresa': 'bg-terminel-green text-white',
-    'Tendencias': 'bg-blue-600 text-white',
-    'Alertas Climáticas': 'bg-orange-600 text-white',
-    'Casos de Éxito': 'bg-purple-600 text-white',
+const categoryColors: Record<Exclude<CategoryKey, 'all'>, string> = {
+    'company': 'bg-terminel-green text-white',
+    'trends': 'bg-blue-600 text-white',
+    'weather_alerts': 'bg-orange-600 text-white',
+    'success_stories': 'bg-purple-600 text-white',
 }
 
 export default function NewsGrid() {
-    const [selectedCategory, setSelectedCategory] = useState('Todas')
+    const t = useTranslations('NewsGrid')
+    const [selectedCategory, setSelectedCategory] = useState<CategoryKey>('all')
 
-    const filteredArticles = selectedCategory === 'Todas'
+    const filteredArticles = selectedCategory === 'all'
         ? articles
         : articles.filter(article => article.category === selectedCategory)
 
@@ -172,25 +150,32 @@ export default function NewsGrid() {
                     className="mb-12"
                 >
                     <div className="flex flex-wrap justify-center gap-3">
-                        {categories.map((category) => {
-                            const Icon = category.icon
+                        {categoriesConfig.map((cat) => {
+                            const Icon = cat.icon
                             return (
                                 <button
-                                    key={category.name}
-                                    onClick={() => setSelectedCategory(category.name)}
-                                    className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${selectedCategory === category.name
+                                    key={cat.key}
+                                    onClick={() => setSelectedCategory(cat.key)}
+                                    className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${selectedCategory === cat.key
                                         ? 'bg-terminel-green text-white shadow-lg scale-105'
                                         : 'bg-white text-gray-700 hover:bg-gray-50 shadow'
                                         }`}
                                 >
                                     <Icon size={18} />
-                                    <span>{category.name}</span>
+                                    <span>{t(`categories.${cat.key}`)}</span>
                                 </button>
                             )
                         })}
                     </div>
                     <div className="text-center mt-4 text-sm text-gray-600">
-                        Mostrando <strong>{filteredArticles.length}</strong> {filteredArticles.length === 1 ? 'artículo' : 'artículos'}
+                        {/* 
+                           Warning: complex ICU message for plural might be tricky if not set up.
+                           But next-intl supports it. 
+                           "showing_articles": "Mostrando <strong>{count}</strong> {count, plural, one {artículo} other {artículos}}"
+                        */}
+                        <span dangerouslySetInnerHTML={{ __html: t('showing_articles', { count: filteredArticles.length }) }} />
+                        {/* Or simpler approach if dangerouslySet is avoided */}
+                        {/* Actually, t.rich is better but t.raw works for HTML strings if we are careful. */}
                     </div>
                 </motion.div>
 
@@ -213,7 +198,7 @@ export default function NewsGrid() {
                                 {/* Category Badge */}
                                 <div className="absolute top-4 left-4">
                                     <span className={`px-3 py-1.5 rounded-lg font-semibold text-xs shadow-lg ${categoryColors[article.category]}`}>
-                                        {article.category}
+                                        {t(`categories.${article.category}`)}
                                     </span>
                                 </div>
                             </div>
@@ -224,11 +209,7 @@ export default function NewsGrid() {
                                 <div className="flex items-center space-x-3 text-xs text-gray-600 mb-3">
                                     <div className="flex items-center space-x-1">
                                         <Calendar size={14} className="text-terminel-green" />
-                                        <span>{new Date(article.date).toLocaleDateString('es-MX', {
-                                            month: 'short',
-                                            day: 'numeric',
-                                            year: 'numeric'
-                                        })}</span>
+                                        <span>{new Date(article.date).toLocaleDateString()}</span>
                                     </div>
                                     <span>•</span>
                                     <div className="flex items-center space-x-1">
@@ -239,12 +220,12 @@ export default function NewsGrid() {
 
                                 {/* Title */}
                                 <h3 className="font-heading font-bold text-xl text-gray-900 mb-3 group-hover:text-terminel-green transition-colors line-clamp-2">
-                                    {article.title}
+                                    {t(`articles.${article.id}.title`)}
                                 </h3>
 
                                 {/* Excerpt */}
                                 <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1 line-clamp-3">
-                                    {article.excerpt}
+                                    {t(`articles.${article.id}.excerpt`)}
                                 </p>
 
                                 {/* CTA */}
@@ -252,7 +233,7 @@ export default function NewsGrid() {
                                     href={`/noticias/${article.id}`}
                                     className="inline-flex items-center space-x-2 text-terminel-green hover:text-terminel-green-700 font-semibold text-sm group/link"
                                 >
-                                    <span>Leer artículo completo</span>
+                                    <span>{t('read_full_article')}</span>
                                     <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
                                 </Link>
                             </div>
@@ -265,16 +246,16 @@ export default function NewsGrid() {
                     <div className="text-center py-16">
                         <div className="text-6xl mb-4">📰</div>
                         <h3 className="text-2xl font-heading font-bold text-gray-900 mb-2">
-                            No hay artículos en esta categoría
+                            {t('no_articles_title')}
                         </h3>
                         <p className="text-gray-600 mb-6">
-                            Intenta seleccionar otra categoría
+                            {t('no_articles_desc')}
                         </p>
                         <button
-                            onClick={() => setSelectedCategory('Todas')}
+                            onClick={() => setSelectedCategory('all')}
                             className="inline-flex items-center space-x-2 bg-terminel-green hover:bg-terminel-green-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
                         >
-                            <span>Ver todos los artículos</span>
+                            <span>{t('view_all')}</span>
                         </button>
                     </div>
                 )}

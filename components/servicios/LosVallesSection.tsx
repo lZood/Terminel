@@ -2,37 +2,34 @@
 
 import { motion } from 'framer-motion'
 import { PackageCheck, Zap, Award, Users } from 'lucide-react'
-
-const features = [
-    {
-        icon: Zap,
-        title: 'Procesamiento Rápido',
-        description: '8 toneladas por hora con tecnología de vanguardia',
-    },
-    {
-        icon: PackageCheck,
-        title: 'Empaquetado Profesional',
-        description: 'Sacos de 25 kg listos para distribución',
-    },
-    {
-        icon: Award,
-        title: 'Control de Calidad',
-        description: 'Limpieza y secado con estándares ISO',
-    },
-    {
-        icon: Users,
-        title: 'Impacto Social',
-        description: 'Beneficia a más de 400 productores locales',
-    },
-]
-
-const products = [
-    'Garbanzo Exportación',
-    'Frijol Premium',
-    'Trigo Seleccionado',
-]
+import { useTranslations } from 'next-intl'
 
 export default function LosVallesSection() {
+    const t = useTranslations('LosVallesSection')
+
+    const features = [
+        {
+            icon: Zap,
+            key: 'processing',
+        },
+        {
+            icon: PackageCheck,
+            key: 'packaging',
+        },
+        {
+            icon: Award,
+            key: 'quality',
+        },
+        {
+            icon: Users,
+            key: 'social',
+        },
+    ]
+
+    // Since products is a simple array of strings in JSON, we can fetch them by index or map them if we know count
+    // But t.raw is safer if configured, or just map indices 0,1,2
+    const products = [0, 1, 2].map(i => t(`products.${i}`))
+
     return (
         <section id="los-valles" className="section-spacing bg-white">
             <div className="container-custom">
@@ -44,16 +41,15 @@ export default function LosVallesSection() {
                     className="text-center mb-16"
                 >
                     <div className="inline-block bg-gradient-harvest text-terminel-green px-6 py-2 rounded-full font-bold text-sm mb-6">
-                        ✨ INAUGURADO ENERO 2026
+                        {t('badge')}
                     </div>
 
                     <h2 className="font-heading font-bold text-3xl lg:text-5xl text-terminel-green mb-6">
-                        Planta Envasadora "Los Valles"
+                        {t('title')}
                     </h2>
 
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Nuestra más reciente inversión en infraestructura, cumpliendo el sueño de Don Enrique
-                        Terminel de agregar valor más allá del acopio tradicional
+                        {t('subtitle')}
                     </p>
                 </motion.div>
 
@@ -67,24 +63,24 @@ export default function LosVallesSection() {
                         className="relative"
                     >
                         <div className="card-glass p-8 lg:p-12 bg-gradient-to-br from-terminel-green to-terminel-green-700 text-white">
-                            <h3 className="font-heading font-bold text-4xl mb-4">8 Ton/Hora</h3>
+                            <h3 className="font-heading font-bold text-4xl mb-4">{t('stat_capacity_title')}</h3>
                             <p className="text-xl text-gray-100 mb-8">
-                                Capacidad de procesamiento de última generación
+                                {t('stat_capacity_desc')}
                             </p>
 
                             <div className="grid grid-cols-2 gap-6">
                                 <div>
-                                    <div className="text-3xl font-heading font-bold mb-2">4,600</div>
-                                    <div className="text-sm text-gray-200">Toneladas de Almacenamiento</div>
+                                    <div className="text-3xl font-heading font-bold mb-2">{t('stat_storage_title')}</div>
+                                    <div className="text-sm text-gray-200">{t('stat_storage_desc')}</div>
                                 </div>
                                 <div>
-                                    <div className="text-3xl font-heading font-bold mb-2">25kg</div>
-                                    <div className="text-sm text-gray-200">Sacos Empaquetados</div>
+                                    <div className="text-3xl font-heading font-bold mb-2">{t('stat_bags_title')}</div>
+                                    <div className="text-sm text-gray-200">{t('stat_bags_desc')}</div>
                                 </div>
                             </div>
 
                             <div className="mt-8 pt-8 border-t border-white/20">
-                                <h4 className="font-semibold mb-3">Productos Procesados:</h4>
+                                <h4 className="font-semibold mb-3">{t('processed_products_title')}</h4>
                                 <div className="space-y-2">
                                     {products.map((product) => (
                                         <div key={product} className="flex items-center space-x-2">
@@ -106,7 +102,7 @@ export default function LosVallesSection() {
                     >
                         {features.map((feature, index) => (
                             <motion.div
-                                key={feature.title}
+                                key={feature.key}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -118,10 +114,10 @@ export default function LosVallesSection() {
                                 </div>
                                 <div>
                                     <h4 className="font-heading font-semibold text-lg text-gray-900 mb-2">
-                                        {feature.title}
+                                        {t(`features.${feature.key}.title`)}
                                     </h4>
                                     <p className="text-gray-600 leading-relaxed">
-                                        {feature.description}
+                                        {t(`features.${feature.key}.desc`)}
                                     </p>
                                 </div>
                             </motion.div>
@@ -137,16 +133,15 @@ export default function LosVallesSection() {
                     className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 lg:p-12 border-l-4 border-terminel-green"
                 >
                     <p className="text-xl text-gray-700 leading-relaxed italic mb-4">
-                        "Esta planta representa nuestro compromiso con el desarrollo agrícola de Sinaloa.
-                        No solo procesamos granos, generamos oportunidades para cientos de familias productoras."
+                        {t('quote')}
                     </p>
                     <div className="flex items-center space-x-3">
                         <div className="w-12 h-12 rounded-full bg-terminel-green flex items-center justify-center text-white font-heading font-bold">
                             AT
                         </div>
                         <div>
-                            <div className="font-semibold text-gray-900">Alejandro Terminel Rojo</div>
-                            <div className="text-sm text-gray-600">Director General</div>
+                            <div className="font-semibold text-gray-900">{t('quote_author')}</div>
+                            <div className="text-sm text-gray-600">{t('quote_role')}</div>
                         </div>
                     </div>
                 </motion.div>

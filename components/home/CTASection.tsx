@@ -2,9 +2,12 @@
 
 import { motion } from 'framer-motion'
 import { User, Sprout, ArrowRight } from 'lucide-react'
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
 export default function CTASection() {
+    const t = useTranslations('CTASection')
+
     return (
         <section className="section-spacing bg-gradient-to-br from-terminel-green via-terminel-green-700 to-terminel-green-800 relative overflow-hidden">
             {/* Decorative Background */}
@@ -28,12 +31,11 @@ export default function CTASection() {
 
                         {/* Heading */}
                         <h2 className="font-heading font-bold text-3xl lg:text-5xl mb-6">
-                            ¿Eres Productor Agrícola?
+                            {t('title')}
                         </h2>
 
                         <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed">
-                            Accede a nuestro portal exclusivo para consultar boletas de báscula,
-                            liquidaciones y gestionar tus documentos en tiempo real
+                            {t('description')}
                         </p>
 
                         {/* Features List */}
@@ -44,8 +46,8 @@ export default function CTASection() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                     </svg>
                                 </div>
-                                <h3 className="font-heading font-semibold text-lg mb-2 text-white">Boletas en Tiempo Real</h3>
-                                <p className="text-sm text-white/80">Consulta tus boletas de báscula al instante</p>
+                                <h3 className="font-heading font-semibold text-lg mb-2 text-white">{t('features.tickets_title')}</h3>
+                                <p className="text-sm text-white/80">{t('features.tickets_desc')}</p>
                             </div>
 
                             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
@@ -54,8 +56,8 @@ export default function CTASection() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
-                                <h3 className="font-heading font-semibold text-lg mb-2 text-white">Liquidaciones</h3>
-                                <p className="text-sm text-white/80">Seguimiento de pagos y créditos</p>
+                                <h3 className="font-heading font-semibold text-lg mb-2 text-white">{t('features.settlements_title')}</h3>
+                                <p className="text-sm text-white/80">{t('features.settlements_desc')}</p>
                             </div>
 
                             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
@@ -64,8 +66,8 @@ export default function CTASection() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                                     </svg>
                                 </div>
-                                <h3 className="font-heading font-semibold text-lg mb-2 text-white">Soporte Directo</h3>
-                                <p className="text-sm text-white/80">Chat con el departamento de pagos</p>
+                                <h3 className="font-heading font-semibold text-lg mb-2 text-white">{t('features.support_title')}</h3>
+                                <p className="text-sm text-white/80">{t('features.support_desc')}</p>
                             </div>
                         </div>
 
@@ -76,7 +78,7 @@ export default function CTASection() {
                                 className="group flex items-center space-x-2 bg-harvest-gold hover:bg-harvest-gold-600 text-terminel-green font-bold px-8 py-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 active:scale-95 text-lg"
                             >
                                 <User size={20} />
-                                <span>Acceder al Portal</span>
+                                <span>{t('portal_button')}</span>
                                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                             </Link>
 
@@ -84,7 +86,7 @@ export default function CTASection() {
                                 href="/nosotros"
                                 className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 border-2 border-white text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 active:scale-95 text-lg"
                             >
-                                <span>Conoce Más Sobre Nosotros</span>
+                                <span>{t('about_button')}</span>
                             </Link>
                         </div>
                     </motion.div>

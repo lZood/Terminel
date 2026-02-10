@@ -1,0 +1,193 @@
+{
+  "name": "Detector de discrepancias",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {
+          "download": true
+        }
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -192,
+        0
+      ],
+      "id": "2a04f7fd-2474-4fa7-b072-71ebc5bb36de",
+      "name": "Telegram Trigger",
+      "webhookId": "69738a31-ea42-410a-a762-64fb64e25a02",
+      "credentials": {
+        "telegramApi": {
+          "id": "bx988JbTEctaka99",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "text": "Analiza la imagen de la boleta de báscula y extrae los siguientes datos estrictamente en formato JSON:\n\n\"folio\": (texto)\n\n\"peso_neto_kg\": (número)\n\n\"producto\": (texto)\n\nREGLA DE CONVERSIÓN: Si el peso en la boleta está en toneladas (ej. 15.5 t), multiplícalo por 1000 y entrega solo el número en kilogramos. Responde ÚNICAMENTE con el objeto JSON, sin texto adicional ni bloques de código Markdown.",
+        "inputType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        48,
+        96
+      ],
+      "id": "e58fb6f1-54b5-42ad-ba18-762c5dc73057",
+      "name": "Analyze an image",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "4uRJouu98kN4oW3a",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "tableId": "auditoria_boletas",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "folio",
+              "fieldValue": "={{ $json.folio }}"
+            },
+            {
+              "fieldId": "discrepancia_detectada",
+              "fieldValue": "={{ $json.discrepancia}}"
+            },
+            {
+              "fieldId": "producto",
+              "fieldValue": "={{ $json.producto }}"
+            },
+            {
+              "fieldId": "peso_neto",
+              "fieldValue": "={{ $json.peso_neto_kg }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        528,
+        112
+      ],
+      "id": "62392235-fa6c-4339-8869-6c5deec9c9ff",
+      "name": "Create a row",
+      "credentials": {
+        "supabaseApi": {
+          "id": "PdnEC3ZdHK7OYzMi",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $node[\"Telegram Trigger\"].json.message.chat.id }}",
+        "text": "=Folio: {{ $json.folio }} Producto: {{ $json.producto }} Peso:{{ $json.peso_neto }} kg Estado: {{ $json.discrepancia ? \"⚠️ DISCREPANCIA DETECTADA\" : \"✔️ PESO CORRECTO\" }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        736,
+        0
+      ],
+      "id": "7212d944-434b-4f06-bd1b-bde71c8e20f3",
+      "name": "Send a text message",
+      "webhookId": "9da992d6-ebcc-4846-a3af-6e7066314fc9",
+      "credentials": {
+        "telegramApi": {
+          "id": "bx988JbTEctaka99",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Accedemos a la ruta exacta donde Gemini guarda el texto\nconst responseText = $json.content.parts[0].text;\n\n// 2. Limpiamos etiquetas de markdown si la IA las incluyó\nconst cleanJson = responseText.replace(/```json|```/g, \"\").trim();\n\n// 3. Convertimos el texto a un objeto JSON real\nconst data = JSON.parse(cleanJson);\n\n// 4. Variables de auditoría\nconst peso_sistema = 5000; // Tu peso base predefinido\nconst peso_ia = parseFloat(data.peso_neto_kg);\n\n// 5. Lógica de comparación (1% de tolerancia)\nconst diferencia_absoluta = Math.abs(peso_ia - peso_sistema);\nconst umbral_tolerancia = peso_sistema * 0.01;\nconst discrepancia = diferencia_absoluta > umbral_tolerancia;\n\n// 6. Retornamos los resultados procesados\nreturn {\n  folio: data.folio,\n  peso_neto_kg: peso_ia,\n  producto: data.producto,\n  discrepancia: discrepancia,\n  diferencia_kg: peso_ia - peso_sistema\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        304,
+        0
+      ],
+      "id": "368525e2-fb3d-4b81-a053-cddccb0c41e2",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Analyze an image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze an image": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a row": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Create a row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "35e8d2d3-f398-451d-9062-b2c34ee4cb7c",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "74b8d2f75b351282d72c6c89534132d10b960e3e283ad94a60233462bbe1a22d"
+  },
+  "id": "1KaWECqfKmnqrRs7BzQ2-",
+  "tags": []
+}

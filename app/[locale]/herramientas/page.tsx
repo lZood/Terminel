@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import dynamic from 'next/dynamic'
 import Hero from '@/components/herramientas/Hero'
 
@@ -18,10 +18,14 @@ const PriceAlerts = dynamic(
     () => import('@/components/herramientas/PriceAlerts')
 )
 
-export const metadata: Metadata = {
-    title: 'Herramientas para Productores - Grupo Terminel',
-    description: 'Herramientas digitales para productores: mapa de silos, calculadora de rentabilidad y biblioteca técnica con fichas de Asgrow, Yara y más.',
-    keywords: ['Calculadora Agrícola', 'Mapa Silos Sinaloa', 'Fichas Técnicas Asgrow', 'Herramientas Productor', 'Simulador Rentabilidad'],
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+    const t = await getTranslations({ locale, namespace: 'ToolsPage' })
+
+    return {
+        title: t('meta_title'),
+        description: t('meta_desc'),
+        keywords: t('meta_keywords').split(','),
+    }
 }
 
 export default function HerramientasPage() {

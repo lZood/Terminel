@@ -1,0 +1,637 @@
+{
+    "NewsHero": {
+        "badge": "Blog Oficial",
+        "title": "Voz del Campo",
+        "subtitle": "Noticias, actualizaciones y tendencias de Grupo Terminel. Mantente informado sobre la agroindustria en Sinaloa.",
+        "years_experience": "De experiencia",
+        "years_value": "55+ años",
+        "producers_allied": "Productores aliados",
+        "growth": "Crecimiento continuo"
+    },
+    "ServicesPage": {
+        "meta_title": "Servicios - Grupo Terminel | Acopio, Molino y Planta Los Valles",
+        "meta_desc": "Servicios agroindustriales integrales: acopio de 110,000 toneladas, Molino Hernando de Villafañe, Planta Los Valles (8 ton/h), financiamiento y asesoría técnica.",
+        "meta_keywords": "Acopio de Granos Sinaloa, Molino Harinas Guasave, Planta Los Valles, Servicios Agrícolas, Financiamiento Agrícola"
+    },
+    "NewsGrid": {
+        "showing_articles": "Mostrando <strong>{count}</strong> {count, plural, one {artículo} other {artículos}}",
+        "read_full_article": "Leer artículo completo",
+        "no_articles_title": "No hay artículos en esta categoría",
+        "no_articles_desc": "Intenta seleccionar otra categoría",
+        "view_all": "Ver todos los artículos",
+        "categories": {
+            "all": "Todas",
+            "company": "Empresa",
+            "trends": "Tendencias",
+            "weather_alerts": "Alertas Climáticas",
+            "success_stories": "Casos de Éxito"
+        },
+        "articles": {
+            "2": {
+                "title": "Grupo Terminel firma alianza estratégica con Asgrow para temporada 2026",
+                "excerpt": "Fortalecemos nuestra oferta de semillas premium para productores con las mejores variedades de maíz blanco adaptadas al clima de Sinaloa."
+            },
+            "3": {
+                "title": "Modernización de silos en Bamoa: Mayor capacidad de almacenamiento",
+                "excerpt": "Inversión de $15 millones mejora infraestructura y aumenta capacidad en 20,000 toneladas adicionales."
+            },
+            "4": {
+                "title": "Productores locales superan expectativas de cosecha de garbanzo 2025",
+                "excerpt": "Don Miguel Torres de Ruiz Cortines logró rendimiento de 3.2 ton/ha con asesoría técnica de nuestro equipo agrónomo."
+            },
+            "5": {
+                "title": "Pronóstico favorable: Temporada de lluvias beneficiará ciclo primavera-verano",
+                "excerpt": "Análisis climático regional indica condiciones óptimas para maíz y frijol en los próximos meses."
+            },
+            "6": {
+                "title": "Precio internacional del maíz alcanza máximo histórico en enero",
+                "excerpt": "Mercados internacionales favorecen exportaciones mexicanas. Análisis de oportunidades para productores."
+            },
+            "7": {
+                "title": "Grupo Terminel recibe certificación Great Place to Work 2024",
+                "excerpt": "Reconocimiento destaca nuestro compromiso con el bienestar de más de 200 colaboradores en toda la región."
+            },
+            "8": {
+                "title": "Nuevas capacitaciones digitales para productores: Portal Terminel 2.0",
+                "excerpt": "Lanzamos programa de formación online gratuito sobre tecnología agrícola, manejo de siembra y comercialización para todos nuestros aliados."
+            },
+            "9": {
+                "title": "Celebramos el Día del Productor con más de 500 agricultores de la región",
+                "excerpt": "Evento anual reunió a productores de Guasave, Los Mochis y Bamoa con conferencias magistrales sobre innovación agrícola y networking."
+            },
+            "10": {
+                "title": "Alerta: Recomendaciones ante posible periodo de sequía en marzo",
+                "excerpt": "Nuestro equipo meteorológico sugiere estrategias de riego eficiente y variedades resistentes para mitigar riesgos climáticos."
+            },
+            "11": {
+                "title": "Exportación récord: Garbanzo sinaloense rompe cifras en mercados asiáticos",
+                "excerpt": "India y Turquía incrementan demanda 35% respecto al año anterior. Oportunidad histórica para productores locales."
+            },
+            "12": {
+                "title": "Historia de éxito: Familia Mendoza duplica producción con agricultura de precisión",
+                "excerpt": "Implementación de tecnología GPS y sensores de humedad aumentó rendimiento de 8 a 17 ton/ha en cultivo de maíz."
+            },
+            "13": {
+                "title": "Grupo Terminel lanza programa de becas para hijos de productores",
+                "excerpt": "Inversión de $2 millones en educación: 50 becas completas para carreras en agronomía, ingeniería y administración."
+            }
+        }
+    },
+    "FeaturedNews": {
+        "badge": "Destacado",
+        "title": "Lo Más Reciente",
+        "read_more": "Leer más",
+        "read_time": "{time} de lectura",
+        "by": "Por",
+        "article": {
+            "title": "Grupo Terminel inaugura moderna planta envasadora \"Los Valles\" en 2026",
+            "excerpt": "Con una inversión superior a los $50 millones de pesos, la nueva planta certificada bajo ISO 22000:2018 revolucionará nuestro proceso de empaquetado de granos básicos, ampliando nuestra capacidad de producción y generando más de 100 empleos directos en la región.",
+            "category": "Empresa",
+            "author": "Grupo Terminel"
+        }
+    },
+    "NewsPage": {
+        "meta_title": "Voz del Campo - Noticias Grupo Terminel",
+        "meta_desc": "Mantente informado sobre las últimas noticias de Grupo Terminel, tendencias agroindustriales, alertas climáticas y casos de éxito de productores en Sinaloa.",
+        "meta_keywords": "noticias agrícolas, Grupo Terminel noticias, agricultura Sinaloa, alertas climáticas, casos de éxito productores, tendencias agroindustriales"
+    },
+    "ToolsPage": {
+        "meta_title": "Herramientas para Productores - Grupo Terminel",
+        "meta_desc": "Herramientas digitales para productores: mapa de silos, calculadora de rentabilidad y biblioteca técnica con fichas de Asgrow, Yara y más.",
+        "meta_keywords": "Calculadora Agrícola, Mapa Silos Sinaloa, Fichas Técnicas Asgrow, Herramientas Productor, Simulador Rentabilidad"
+    },
+    "TechnicalLibrary": {
+        "badge": "Biblioteca Técnica Digital",
+        "title": "Recursos para tu Cultivo",
+        "description": "Accede a fichas técnicas, catálogos de productos y guías prácticas para optimizar tu producción",
+        "search_placeholder": "Buscar por nombre, marca o palabra clave...",
+        "download": "Descargar",
+        "no_results": "No se encontraron documentos que coincidan con tu búsqueda",
+        "contact_title": "¿No encuentras lo que buscas?",
+        "contact_desc": "Contacta a nuestro equipo de asesoría técnica para solicitar documentos adicionales",
+        "contact_button": "📞 Contactar Asesor",
+        "categories": {
+            "all": "Todas",
+            "seeds": "Semillas",
+            "fertilizers": "Fertilizantes",
+            "protection": "Protección",
+            "guides": "Guías"
+        },
+        "docs": {
+            "asgrow-maize-2026": {
+                "title": "Catálogo Maíz Asgrow 2026",
+                "description": "Variedades de maíz blanco y amarillo para Sinaloa"
+            },
+            "asgrow-soy": {
+                "title": "Guía de Variedades de Soya",
+                "description": "Características y rendimientos de soya Asgrow"
+            },
+            "yara-premium": {
+                "title": "Yara Línea Premium",
+                "description": "Especificaciones técnicas de fertilizantes premium"
+            },
+            "yara-application": {
+                "title": "Guía de Aplicación Yara",
+                "description": "Dosificación y tiempos de aplicación recomendados"
+            },
+            "monsanto-roundup": {
+                "title": "Roundup - Ficha Técnica",
+                "description": "Uso seguro y efectivo de herbicidas Roundup"
+            },
+            "best-practices-maize": {
+                "title": "Mejores Prácticas: Maíz en Sinaloa",
+                "description": "Guía completa de producción de maíz en el Valle de Guasave"
+            },
+            "water-management": {
+                "title": "Manejo Eficiente del Agua",
+                "description": "Técnicas de riego y conservación de agua"
+            },
+            "garbanzo-export": {
+                "title": "Garbanzo: Calidad de Exportación",
+                "description": "Estándares de calidad para mercados internacionales"
+            }
+        }
+    },
+    "ProfitabilitySimulator": {
+        "badge": "Simulador de Rentabilidad",
+        "title": "Calcula tu Rentabilidad",
+        "description": "Estima tu producción y rendimiento económico con base en precios actuales del mercado",
+        "form": {
+            "title": "Datos de tu Cultivo",
+            "crop_label": "Tipo de Cultivo",
+            "hectares_label": "Hectáreas Cultivadas",
+            "hectares_placeholder": "Ej: 50",
+            "yield_label": "Rendimiento Esperado (ton/ha)",
+            "yield_avg": "Promedio regional: <bold>{yield}</bold> {unit}",
+            "yield_placeholder": "Promedio regional: {yield} ton/ha",
+            "price_label": "Precio por Tonelada (MXN) - Opcional",
+            "price_placeholder": "Dejar en blanco para usar precio actual",
+            "price_current": "Precio actual: {price}",
+            "cbot_current": "💹 Precio CBOT actual: {price}/ton",
+            "calculate_button": "Calcular Rentabilidad",
+            "calculating_button": "Calculando...",
+            "alert_hectares": "Por favor ingresa un número válido de hectáreas"
+        },
+        "results": {
+            "title": "Estimación de Rendimiento",
+            "gross_revenue": "Ingresos Brutos Estimados",
+            "total_production": "Producción Total",
+            "tons_of": "toneladas de {crop}",
+            "price_per_ton": "Precio por Tonelada",
+            "mxn_per_ton": "MXN/tonelada",
+            "cta_text": "¿Necesitas financiamiento para tu ciclo agrícola?",
+            "cta_button": "Solicitar Crédito de Habilitación",
+            "empty_state": "Completa los datos de tu cultivo para ver tu estimación de rentabilidad"
+        },
+        "crops": {
+            "maiz": "Maíz Blanco",
+            "garbanzo": "Garbanzo",
+            "frijol": "Frijol",
+            "trigo": "Trigo"
+        }
+    },
+    "PriceAlerts": {
+        "badge": "Sistema de Alertas",
+        "title": "Alertas de Precios en Tiempo Real",
+        "intro": "Recibe notificaciones instantáneas cuando los precios de tus cultivos alcancen el valor que buscas. Nunca pierdas una oportunidad de venta.",
+        "success_title": "¡Suscripción Exitosa!",
+        "success_desc": "Te notificaremos cuando el precio de <bold>{crop}</bold> alcance <bold>${price}/ton</bold>.",
+        "form": {
+            "name_label": "Nombre Completo *",
+            "name_placeholder": "Juan Pérez",
+            "crop_label": "Cultivo *",
+            "email_label": "Correo Electrónico *",
+            "email_placeholder": "juan@ejemplo.com",
+            "phone_label": "Teléfono (WhatsApp)",
+            "phone_placeholder": "687 123 4567",
+            "price_label": "Precio Objetivo (MXN/ton) *",
+            "price_placeholder": "5,500.00",
+            "price_help": "Te notificaremos cuando el precio alcance o supere este valor",
+            "notification_label": "Tipo de Notificación *",
+            "notification_email": "Email",
+            "notification_sms": "SMS",
+            "notification_both": "Ambos",
+            "submit_button": "Activar Alertas",
+            "submitting_button": "Suscribiendo...",
+            "privacy": "Al suscribirte, aceptas recibir notificaciones de precios. Puedes cancelar en cualquier momento."
+        },
+        "features": {
+            "realtime_title": "Datos en Tiempo Real",
+            "realtime_desc": "Precios actualizados cada hora desde mercados nacionales e internacionales.",
+            "instant_title": "Notificaciones Instantáneas",
+            "instant_desc": "Recibe alertas en menos de 5 minutos cuando el precio alcance tu objetivo.",
+            "free_title": "100% Gratuito",
+            "free_desc": "Sin costos ocultos. Servicio exclusivo para productores asociados a Terminel."
+        },
+        "crops": {
+            "maiz": "Maíz Blanco",
+            "garbanzo": "Garbanzo",
+            "frijol": "Frijol",
+            "trigo": "Trigo"
+        }
+    },
+    "InteractiveSiloMap": {
+        "badge": "Ubicaciones Estratégicas",
+        "title": "Nuestros Centros de Acopio",
+        "description": "Encuentra el centro de acopio más cercano a ti. Todos nuestros silos están estratégicamente ubicados con acceso directo a vías principales.",
+        "status_operative": "Operativo",
+        "status_closed": "Cerrado",
+        "label_main": "Principal",
+        "btn_directions": "Cómo llegar",
+        "btn_map": "Ver en Mapa",
+        "footer_title": "Presencia Regional",
+        "footer_desc": "Nuestros 4 centros de acopio están estratégicamente ubicados en la región norte de Sinaloa, garantizando cobertura completa para productores del Valle de Guasave y Los Mochis. <green>Comparte tu ubicación exacta</green> y te ayudaremos a encontrar el centro más cercano.",
+        "locations": {
+            "guasave-centro": {
+                "name": "Guasave Centro",
+                "address": "Calle 100 y Carr. a Las Glorias, Guasave, Sinaloa"
+            },
+            "ruiz-cortines": {
+                "name": "Bodega Pinitos",
+                "address": "Carr. Internacional km 168+500, Ruiz Cortines, Sinaloa"
+            },
+            "bamoa": {
+                "name": "Bodega Bamoa",
+                "address": "Estación Bamoa, Sinaloa"
+            },
+            "los-mochis": {
+                "name": "Bodega Flor Azul",
+                "address": "Carr. Internacional y Flor Azul, Ahome, Sinaloa"
+            }
+        }
+    },
+    "MolinoSection": {
+        "badge": "Desde 1987",
+        "title": "Molino Hernando de Villafañe",
+        "intro": "Fundado en 1987 por Don Enrique Terminel Fonseca, nuestro molino produce <green>harinas de trigo de alta calidad</green> con tecnología de última generación.",
+        "description": "Con una capacidad de almacenamiento de 28,000 toneladas y procesamiento de 4,200 toneladas mensuales, hemos consolidado marcas regionales reconocidas por su consistencia y calidad.",
+        "modernization_title": "Modernización 2016:",
+        "modernization_desc": "Actualización completa de equipos de molienda con tecnología de precisión que garantiza harinas uniformes y de excelente calidad para panificación industrial y doméstica.",
+        "specs": {
+            "storage": {
+                "label": "Capacidad de Almacenaje",
+                "value": "28,000 Ton"
+            },
+            "processing": {
+                "label": "Procesamiento Mensual",
+                "value": "4,200 Ton"
+            },
+            "years": {
+                "label": "Años de Operación",
+                "value": "37+ Años"
+            },
+            "products": {
+                "label": "Productos",
+                "value": "3 Marcas"
+            }
+        },
+        "brands_title": "Marcas Propias:",
+        "brands": [
+            "Rica Sinaloa",
+            "Doña Güera",
+            "Harinas Premium"
+        ]
+    },
+    "LosVallesSection": {
+        "badge": "✨ INAUGURADO ENERO 2026",
+        "title": "Planta Envasadora \"Los Valles\"",
+        "subtitle": "Nuestra más reciente inversión en infraestructura, cumpliendo el sueño de Don Enrique Terminel de agregar valor más allá del acopio tradicional",
+        "stat_capacity_title": "8 Ton/Hora",
+        "stat_capacity_desc": "Capacidad de procesamiento de última generación",
+        "stat_storage_title": "4,600",
+        "stat_storage_desc": "Toneladas de Almacenamiento",
+        "stat_bags_title": "25kg",
+        "stat_bags_desc": "Sacos Empaquetados",
+        "processed_products_title": "Productos Procesados:",
+        "products": [
+            "Garbanzo Exportación",
+            "Frijol Premium",
+            "Trigo Seleccionado"
+        ],
+        "features": {
+            "processing": {
+                "title": "Procesamiento Rápido",
+                "desc": "8 toneladas por hora con tecnología de vanguardia"
+            },
+            "packaging": {
+                "title": "Empaquetado Profesional",
+                "desc": "Sacos de 25 kg listos para distribución"
+            },
+            "quality": {
+                "title": "Control de Calidad",
+                "desc": "Limpieza y secado con estándares ISO"
+            },
+            "social": {
+                "title": "Impacto Social",
+                "desc": "Beneficia a más de 400 productores locales"
+            }
+        },
+        "quote": "\"Esta planta representa nuestro compromiso con el desarrollo agrícola de Sinaloa. No solo procesamos granos, generamos oportunidades para cientos de familias productoras.\"",
+        "quote_author": "Alejandro Terminel Rojo",
+        "quote_role": "Director General"
+    },
+    "ComplementaryServices": {
+        "title": "Servicios Complementarios",
+        "subtitle": "Porque entendemos que el éxito agrícola requiere más que acopio, ofrecemos un ecosistema completo de apoyo",
+        "financing": {
+            "title": "Financiamiento Agrícola",
+            "desc": "Créditos de habilitación, adelantos de pago y garantías de precio para maximizar tu flujo de efectivo durante el ciclo agrícola.",
+            "benefits": [
+                "Adelantos inmediatos",
+                "Tasas competitivas",
+                "Trámites ágiles"
+            ]
+        },
+        "advisory": {
+            "title": "Asesoría Técnica",
+            "desc": "Expertos agrónomos que te acompañan desde la siembra hasta la cosecha, optimizando rendimientos con base científica.",
+            "benefits": [
+                "Análisis de suelo",
+                "Plan nutricional",
+                "Monitoreo de cultivos"
+            ]
+        },
+        "supplies": {
+            "title": "Distribución de Insumos",
+            "desc": "Alianzas con las mejores marcas globales: semillas Asgrow, fertilizantes Yara, y nutrición de precisión.",
+            "benefits": [
+                "Asgrow Seeds",
+                "Yara Fertilizantes",
+                "Garantía de calidad"
+            ]
+        },
+        "insurance": {
+            "title": "Fondos de Aseguramiento",
+            "desc": "Protección contra riesgos climáticos y garantías que respaldan tu inversión y esfuerzo.",
+            "benefits": [
+                "Cobertura amplia",
+                "Respaldo institucional",
+                "Tranquilidad total"
+            ]
+        },
+        "cta_title": "¿Listo para maximizar tu producción?",
+        "cta_desc": "Únete a más de 400 productores que confían en Grupo Terminel para sus operaciones agrícolas",
+        "cta_portal": "Acceder al Portal",
+        "cta_contact": "Contactar un Asesor"
+    },
+    "AcopioSection": {
+        "badge": "Núcleo de Operaciones",
+        "title": "Acopio Masivo",
+        "description_1": "Con una capacidad de almacenamiento de <green>110,000 toneladas</green>, nuestros centros de acopio están estratégicamente ubicados para servir a más de 400 productores en todo Sinaloa.",
+        "description_2": "Infraestructura moderna sobre la carretera México 15 que agiliza la distribución nacional e internacional. Sistemas de pesaje certificados y control de calidad riguroso en cada entrada.",
+        "feature_scale": "Báscula Certificada",
+        "feature_scale_desc": "Pesaje preciso con boletas en tiempo real",
+        "feature_logistics": "Logística Eficiente",
+        "feature_logistics_desc": "Distribución nacional e internacional",
+        "locations_title": "Ubicaciones Estratégicas:",
+        "locations": {
+            "guasave_centro": "Guasave Centro",
+            "ruiz_cortines": "Ruiz Cortines",
+            "bamoa": "Bamoa",
+            "los_mochis": "Los Mochis"
+        },
+        "grains": {
+            "white_corn": "Maíz Blanco",
+            "capacity": "110,000 ton",
+            "chickpea": "Garbanzo",
+            "export": "15+ países",
+            "bean": "Frijol",
+            "quality": "Premium",
+            "wheat": "Trigo",
+            "variety": "Múltiples variedades"
+        }
+    },
+    "ToolsHero": {
+        "badge": "Herramientas Digitales",
+        "title": "Tecnología al Servicio del Campo",
+        "subtitle": "Herramientas prácticas diseñadas para maximizar tu rentabilidad y facilitar tus decisiones agrícolas",
+        "silo_map": "Mapa de Silos",
+        "calculator": "Calculadora",
+        "tech_library": "Biblioteca Técnica",
+        "price_alerts": "Alertas de Precios"
+    },
+    "ServicesHero": {
+        "badge": "Servicios Integrales",
+        "title": "Soluciones Completas para el Campo",
+        "subtitle": "Desde el acopio hasta la industrialización, ofrecemos una cadena de valor completa que maximiza tu rentabilidad"
+    },
+    "Certifications": {
+        "title": "Certificaciones y Reconocimientos",
+        "description": "Nuestro compromiso con la excelencia está respaldado por certificaciones internacionales y reconocimientos que validan nuestra calidad y responsabilidad",
+        "achievements_title": "Logros Destacados:",
+        "cta_text": "Nuestro compromiso con la calidad y la responsabilidad es constante. Seguimos trabajando para mantener y superar estos estándares.",
+        "cta_button": "Descubre nuestros servicios certificados",
+        "gptw": {
+            "title": "Great Place to Work",
+            "desc": "Primera empresa de Guasave certificada como excelente lugar para trabajar. Este reconocimiento valida nuestro compromiso con el bienestar, el desarrollo profesional y la inclusión de nuestro equipo.",
+            "achievements": [
+                "Ambiente laboral inclusivo",
+                "Desarrollo profesional continuo",
+                "Cultura de reconocimiento",
+                "Balance vida-trabajo"
+            ]
+        },
+        "iso": {
+            "title": "ISO 22000:2018",
+            "desc": "Certificación internacional en gestión de inocuidad alimentaria, garantizando la seguridad de nuestros productos desde el acopio hasta la entrega final al consumidor.",
+            "achievements": [
+                "Trazabilidad completa",
+                "Controles de calidad rigurosos",
+                "Cumplimiento normativo internacional",
+                "Mejora continua documentada"
+            ]
+        },
+        "esr": {
+            "title": "Empresa Socialmente Responsable",
+            "desc": "Distintivo otorgado por nuestro compromiso con la responsabilidad social, el cuidado del medio ambiente y la ética empresarial en todas nuestras operaciones.",
+            "achievements": [
+                "Prácticas sustentables",
+                "Apoyo a la comunidad local",
+                "Ética en los negocios",
+                "Compromiso ambiental"
+            ]
+        }
+    },
+    "Leadership": {
+        "title": "Liderazgo",
+        "subtitle": "Visión familiar que trasciende generaciones",
+        "alejandro": {
+            "name": "Alejandro Terminel Rojo",
+            "role": "Director General",
+            "bio_1": "Hijo del fundador Enrique Terminel Fonseca, Alejandro lidera la segunda generación del Grupo Terminel con una visión clara: agregar valor más allá del acopio tradicional y fortalecer el campo sinaloense.",
+            "bio_2": "Bajo su dirección, la empresa ha alcanzado hitos significativos como la inauguración de la Planta Los Valles, la certificación Great Place to Work, y la expansión de exportaciones de garbanzo a más de 15 países.",
+            "quote": "\"Construir Los Valles cumplió el sueño de mi padre de generar más valor para nuestros productores. Seguimos comprometidos con el desarrollo agrícola de Sinaloa.\""
+        },
+        "enrique": {
+            "name": "Enrique Terminel Fonseca",
+            "role": "Fundador (1970)",
+            "bio_1": "Visionario emprendedor que en los años 70 identificó el potencial agrícola del Valle de Guasave. Con apoyo de colaboradores locales, inició la compra-venta de granos que con el tiempo se consolidó como el actual Grupo Terminel.",
+            "bio_2": "Su legado incluye la fundación del Molino Hernando de Villafañe en 1987 y las marcas propias \"La Trinidad\" y \"Don Enrique\", que hoy son sinónimo de calidad en la región."
+        },
+        "contact": "Contacto"
+    },
+    "AboutHero": {
+        "since": "Desde 1970",
+        "title": "Nuestra Historia",
+        "story_desc": "Una trayectoria familiar de más de cinco décadas fortaleciendo el campo sinaloense con visión, compromiso y resultados tangibles"
+    },
+    "Hero": {
+        "anniversary_years": "55 AÑOS",
+        "anniversary_period": "1970 - 2025",
+        "headline_prefix": "Cultivando el",
+        "headline_highlight": "Futuro",
+        "headline_suffix": "del Campo Sinaloense",
+        "tagline": "Cosechamos Confianza",
+        "description": "Líder agroindustrial en acopio, procesamiento y comercialización de granos. Exportando calidad sinaloense a más de 15 países con certificación ISO 22000:2018.",
+        "stats": {
+            "tons_label": "Toneladas",
+            "producers_label": "Productores",
+            "countries_label": "Países"
+        },
+        "buttons": {
+            "services": "Nuestros Servicios",
+            "history": "Nuestra Historia"
+        },
+        "scroll": "Descubre más"
+    },
+    "DynamicWidgets": {
+        "weather_title": "Clima Guasave",
+        "humidity": "Humedad",
+        "dam_level_title": "Nivel de Presas",
+        "regional_capacity": "Capacidad regional promedio",
+        "cbot_title": "Precio Maíz (CBOT)",
+        "corn_cbot": "Maíz (CBOT)",
+        "usd_per_bushel": "USD por bushel",
+        "not_available": "No disponible"
+    },
+    "ImpactMetrics": {
+        "title": "Impacto en Números",
+        "description": "Más de cinco décadas fortaleciendo el campo mexicano con resultados tangibles",
+        "metrics": {
+            "producers_label": "Productores Beneficiados",
+            "producers_desc": "Aliados del campo sinaloense",
+            "countries_label": "Países de Exportación",
+            "countries_desc": "Garbanzo sinaloense al mundo",
+            "capacity_label": "Toneladas de Capacidad",
+            "capacity_desc": "Almacenamiento y procesamiento",
+            "experience_label": "Años de Experiencia",
+            "experience_desc": "Liderazgo agroindustrial"
+        },
+        "cta_text": "Descubre cómo podemos impulsar tu producción agrícola",
+        "cta_button": "Conoce nuestros servicios"
+    },
+    "ServicesOverview": {
+        "title": "Servicios Integrales",
+        "description": "Desde el acopio hasta la industrialización, ofrecemos soluciones completas para maximizar el valor de tu producción",
+        "services": {
+            "acopio_title": "Acopio Masivo",
+            "acopio_desc": "Capacidad de almacenamiento de 110,000 toneladas con infraestructura estratégica en todo Sinaloa.",
+            "acopio_features": "Maíz Blanco,Garbanzo,Frijol,Trigo",
+            "molino_title": "Molino Hernando de Villafañe",
+            "molino_desc": "Producción de harinas de trigo de alta calidad desde 1987 con marcas reconocidas regionalmente.",
+            "molino_features": "Rica Sinaloa,Doña Güera,Harinas Premium",
+            "planta_title": "Planta Los Valles",
+            "planta_desc": "Nueva instalación 2026 para limpieza, secado y empaquetado con tecnología de vanguardia.",
+            "planta_features": "Garbanzo,Frijol,Trigo,Empaquetado 25kg"
+        },
+        "learn_more": "Conoce más",
+        "complementary_title": "Servicios Complementarios",
+        "complementary_desc": "Financiamiento agrícola, asesoría técnica, distribución de insumos (Asgrow, Yara), y fondos de aseguramiento para garantizar el éxito de tu cosecha",
+        "view_all": "Ver todos los servicios"
+    },
+    "TrustIndicators": {
+        "title": "Confianza que Trasciende",
+        "description": "Nuestro compromiso con la calidad, la responsabilidad social y el desarrollo sustentable está respaldado por certificaciones internacionales",
+        "certifications": {
+            "gptw_title": "Great Place to Work",
+            "gptw_desc": "Primera empresa de Guasave certificada como excelente lugar para trabajar",
+            "gptw_year": "2024",
+            "iso_title": "ISO 22000:2018",
+            "iso_desc": "Certificación en gestión de inocuidad alimentaria y estándares internacionales",
+            "iso_year": "Vigente",
+            "esr_title": "Empresa Socialmente Responsable",
+            "esr_desc": "Distintivo ESR en reconocimiento a nuestro compromiso social y ambiental",
+            "esr_year": "2025",
+            "sustainability_title": "Sostenibilidad",
+            "sustainability_desc": "Prácticas agrícolas sustentables y responsables con el medio ambiente",
+            "sustainability_year": "Continuo"
+        },
+        "quote": {
+            "text": "Construir la Planta Los Valles cumplió el sueño de mi padre de agregar valor más allá del acopio tradicional. Seguimos comprometidos con el fortalecimiento del campo sinaloense.",
+            "author": "Alejandro Terminel Rojo",
+            "role": "Director General, Grupo Terminel"
+        }
+    },
+    "LatestNews": {
+        "title": "Últimas Noticias",
+        "description": "Mantente informado sobre nuestros logros, expansiones y eventos",
+        "view_all": "Ver todas",
+        "read_more": "Leer más",
+        "view_all_mobile": "Ver todas las noticias",
+        "articles": {
+            "article1": {
+                "title": "Grupo Terminel inaugura moderna planta envasadora \"Los Valles\" en 2026",
+                "excerpt": "Con una inversión superior a los $50 millones de pesos, la nueva planta certificada bajo ISO 22000:2018 revolucionará nuestro proceso de empaquetado de granos básicos.",
+                "category": "Empresa"
+            },
+            "article2": {
+                "title": "Grupo Terminel firma alianza estratégica con Asgrow para temporada 2026",
+                "excerpt": "Fortalecemos nuestra oferta de semillas premium para productores con las mejores variedades de maíz blanco adaptadas al clima de Sinaloa.",
+                "category": "Empresa"
+            },
+            "article3": {
+                "title": "Modernización de silos en Bamoa: Mayor capacidad de almacenamiento",
+                "excerpt": "Inversión de $15 millones mejora infraestructura y aumenta capacidad en 20,000 toneladas adicionales, fortaleciendo nuestra red de acopio regional.",
+                "category": "Empresa"
+            }
+        }
+    },
+    "CTASection": {
+        "title": "¿Eres Productor Agrícola?",
+        "description": "Accede a nuestro portal exclusivo para consultar boletas de báscula, liquidaciones y gestionar tus documentos en tiempo real",
+        "features": {
+            "tickets_title": "Boletas en Tiempo Real",
+            "tickets_desc": "Consulta tus boletas de báscula al instante",
+            "settlements_title": "Liquidaciones",
+            "settlements_desc": "Seguimiento de pagos y créditos",
+            "support_title": "Soporte Directo",
+            "support_desc": "Chat con el departamento de pagos"
+        },
+        "portal_button": "Acceder al Portal",
+        "about_button": "Conoce Más Sobre Nosotros"
+    },
+    "Footer": {
+        "brand_desc": "Liderando la modernización agrícola en Sinaloa desde 1970. Comprometidos con el éxito de nuestros productores y la excelencia agroindustrial.",
+        "columns": {
+            "company": "Empresa",
+            "services": "Servicios",
+            "contact": "Contacto"
+        },
+        "links": {
+            "about": "Nosotros",
+            "services": "Servicios",
+            "tools": "Herramientas",
+            "sustainability": "Sustentabilidad",
+            "careers": "Carreras",
+            "news": "Noticias",
+            "storage": "Acopio Masivo",
+            "mill": "Molino de Trigo",
+            "packaging": "Planta de Empaque",
+            "portal": "Portal Productor",
+            "privacy": "Aviso de Privacidad",
+            "terms": "Términos de Uso",
+            "ethics": "Ética y Responsabilidad"
+        },
+        "copyright": "Todos los derechos reservados."
+    },
+    "Header": {
+        "nav": {
+            "about": "Nosotros",
+            "services": "Servicios",
+            "tools": "Herramientas",
+            "technology": "Tecnología",
+            "news": "Noticias"
+        },
+        "portal_button": "Portal Productor"
+    }
+}

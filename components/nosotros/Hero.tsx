@@ -1,8 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
 export default function Hero() {
+    const t = useTranslations('AboutHero')
+
     return (
         <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-terminel-green to-terminel-green-800 overflow-hidden">
             {/* Background Pattern */}
@@ -20,16 +23,15 @@ export default function Hero() {
                         transition={{ duration: 0.8 }}
                     >
                         <div className="inline-block bg-harvest-gold text-terminel-green px-6 py-2 rounded-full font-semibold text-sm mb-6">
-                            Desde 1970
+                            {t('since')}
                         </div>
 
                         <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-7xl mb-6 leading-tight">
-                            Nuestra Historia
+                            {t('title')}
                         </h1>
 
                         <p className="text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-3xl mx-auto">
-                            Una trayectoria familiar de más de cinco décadas fortaleciendo
-                            el campo sinaloense con visión, compromiso y resultados tangibles
+                            {t('story_desc')}
                         </p>
                     </motion.div>
                 </div>

@@ -4,38 +4,41 @@ import { motion } from 'framer-motion'
 import { Award, Shield, Heart, Leaf } from 'lucide-react'
 import Image from 'next/image'
 
-const certifications = [
-    {
-        icon: Award,
-        title: 'Great Place to Work',
-        description: 'Primera empresa de Guasave certificada como excelente lugar para trabajar',
-        year: '2024',
-        color: 'from-yellow-500 to-yellow-600',
-    },
-    {
-        icon: Shield,
-        title: 'ISO 22000:2018',
-        description: 'Certificación en gestión de inocuidad alimentaria y estándares internacionales',
-        year: 'Vigente',
-        color: 'from-terminel-green to-terminel-green-700',
-    },
-    {
-        icon: Heart,
-        title: 'Empresa Socialmente Responsable',
-        description: 'Distintivo ESR en reconocimiento a nuestro compromiso social y ambiental',
-        year: '2025',
-        color: 'from-red-500 to-red-600',
-    },
-    {
-        icon: Leaf,
-        title: 'Sostenibilidad',
-        description: 'Prácticas agrícolas sustentables y responsables con el medio ambiente',
-        year: 'Continuo',
-        color: 'from-green-500 to-green-600',
-    },
-]
+import { useTranslations } from 'next-intl'
 
 export default function TrustIndicators() {
+    const t = useTranslations('TrustIndicators')
+
+    const certifications = [
+        {
+            icon: Award,
+            title: t('certifications.gptw_title'),
+            description: t('certifications.gptw_desc'),
+            year: t('certifications.gptw_year'),
+            color: 'from-yellow-500 to-yellow-600',
+        },
+        {
+            icon: Shield,
+            title: t('certifications.iso_title'),
+            description: t('certifications.iso_desc'),
+            year: t('certifications.iso_year'),
+            color: 'from-terminel-green to-terminel-green-700',
+        },
+        {
+            icon: Heart,
+            title: t('certifications.esr_title'),
+            description: t('certifications.esr_desc'),
+            year: t('certifications.esr_year'),
+            color: 'from-red-500 to-red-600',
+        },
+        {
+            icon: Leaf,
+            title: t('certifications.sustainability_title'),
+            description: t('certifications.sustainability_desc'),
+            year: t('certifications.sustainability_year'),
+            color: 'from-green-500 to-green-600',
+        },
+    ]
     return (
         <section className="section-spacing bg-white">
             <div className="container-custom">
@@ -47,11 +50,10 @@ export default function TrustIndicators() {
                     className="text-center mb-16"
                 >
                     <h2 className="font-heading font-bold text-3xl lg:text-5xl text-terminel-green mb-4">
-                        Confianza que Trasciende
+                        {t('title')}
                     </h2>
                     <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Nuestro compromiso con la calidad, la responsabilidad social y el desarrollo sustentable
-                        está respaldado por certificaciones internacionales
+                        {t('description')}
                     </p>
                 </motion.div>
 
@@ -99,9 +101,7 @@ export default function TrustIndicators() {
 
                         <div className="relative z-10">
                             <p className="text-xl lg:text-2xl font-light mb-6 leading-relaxed italic">
-                                "Construir la Planta Los Volles cumplió el sueño de mi padre de agregar valor
-                                más allá del acopio tradicional. Seguimos comprometidos con el fortalecimiento
-                                del campo sinaloense."
+                                "{t('quote.text')}"
                             </p>
                             <div className="flex items-center space-x-4">
                                 <div className="w-16 h-16 rounded-full bg-harvest-gold flex items-center justify-center font-heading font-bold text-2xl text-terminel-green">
@@ -109,10 +109,10 @@ export default function TrustIndicators() {
                                 </div>
                                 <div>
                                     <div className="font-heading font-semibold text-lg">
-                                        Alejandro Terminel Rojo
+                                        {t('quote.author')}
                                     </div>
                                     <div className="text-sm text-gray-200">
-                                        Director General, Grupo Terminel
+                                        {t('quote.role')}
                                     </div>
                                 </div>
                             </div>

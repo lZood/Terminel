@@ -1,9 +1,7 @@
-import './globals.css'
+import '../globals.css'
 import type { Metadata } from 'next'
 import { Inter, Outfit } from 'next/font/google'
-import Header from '@/components/shared/Header'
-import Footer from '@/components/shared/Footer'
-import FloatingWhatsApp from '@/components/shared/FloatingWhatsApp'
+import ConditionalLayout from '@/components/shared/ConditionalLayout'
 
 const inter = Inter({
     subsets: ['latin'],
@@ -31,20 +29,25 @@ export const metadata: Metadata = {
     },
 }
 
-export default function RootLayout({
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+
+export default async function LocaleLayout({
     children,
+    params
 }: {
-    children: React.ReactNode
+    children: React.ReactNode;
+    params: Promise<{ locale: string }>;
 }) {
+    const { locale } = await params;
+    const messages = await getMessages();
+
     return (
-        <html lang="es" className={`${inter.variable} ${outfit.variable}`}>
+        <html lang={locale} className={`${inter.variable} ${outfit.variable}`}>
             <body>
-                <Header />
-                <main className="min-h-screen">
-                    {children}
-                </main>
-                <Footer />
-                <FloatingWhatsApp />
+                <NextIntlClientProvider messages={messages}>
+                    <ConditionalLayout>{children}</ConditionalLayout>
+                </NextIntlClientProvider>
             </body>
         </html>
     )

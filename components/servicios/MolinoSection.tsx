@@ -2,21 +2,24 @@
 
 import { motion } from 'framer-motion'
 import { Factory, TrendingUp, CheckCircle, Package } from 'lucide-react'
-
-const brands = [
-    { name: 'Rica Sinaloa', emoji: '🌾' },
-    { name: 'Doña Güera', emoji: '🥖' },
-    { name: 'Harinas Premium', emoji: '✨' },
-]
-
-const specs = [
-    { label: 'Capacidad de Almacenaje', value: '28,000 Ton' },
-    { label: 'Procesamiento Mensual', value: '4,200 Ton' },
-    { label: 'Años de Operación', value: '37+ Años' },
-    { label: 'Productos', value: '3 Marcas' },
-]
+import { useTranslations } from 'next-intl'
 
 export default function MolinoSection() {
+    const t = useTranslations('MolinoSection')
+
+    const brands = [
+        { nameKey: '0', emoji: '🌾' },
+        { nameKey: '1', emoji: '🥖' },
+        { nameKey: '2', emoji: '✨' },
+    ]
+
+    const specs = [
+        { key: 'storage' },
+        { key: 'processing' },
+        { key: 'years' },
+        { key: 'products' },
+    ]
+
     return (
         <section id="molino" className="section-spacing bg-gradient-to-br from-gray-50 to-gray-100">
             <div className="container-custom">
@@ -36,7 +39,7 @@ export default function MolinoSection() {
                             <div className="grid grid-cols-2 gap-6">
                                 {specs.map((spec, index) => (
                                     <motion.div
-                                        key={spec.label}
+                                        key={spec.key}
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
@@ -44,22 +47,22 @@ export default function MolinoSection() {
                                         className="border-l-4 border-harvest-gold pl-4"
                                     >
                                         <div className="text-3xl font-heading font-bold text-terminel-green mb-1">
-                                            {spec.value}
+                                            {t(`specs.${spec.key}.value`)}
                                         </div>
-                                        <div className="text-sm text-gray-600">{spec.label}</div>
+                                        <div className="text-sm text-gray-600">{t(`specs.${spec.key}.label`)}</div>
                                     </motion.div>
                                 ))}
                             </div>
 
                             <div className="mt-8 pt-8 border-t border-gray-200">
-                                <h4 className="font-semibold text-gray-900 mb-4">Marcas Propias:</h4>
+                                <h4 className="font-semibold text-gray-900 mb-4">{t('brands_title')}</h4>
                                 <div className="space-y-3">
                                     {brands.map((brand) => (
-                                        <div key={brand.name} className="flex items-center space-x-3">
+                                        <div key={brand.nameKey} className="flex items-center space-x-3">
                                             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-harvest-gold to-harvest-gold-600 flex items-center justify-center text-xl shadow-md">
                                                 {brand.emoji}
                                             </div>
-                                            <span className="text-gray-700 font-medium">{brand.name}</span>
+                                            <span className="text-gray-700 font-medium">{t(`brands.${brand.nameKey}`)}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -76,29 +79,26 @@ export default function MolinoSection() {
                     >
                         <div className="inline-flex items-center space-x-2 bg-harvest-gold/20 text-harvest-gold-700 px-4 py-2 rounded-full font-semibold text-sm mb-6">
                             <TrendingUp size={18} />
-                            <span>Desde 1987</span>
+                            <span>{t('badge')}</span>
                         </div>
 
                         <h2 className="font-heading font-bold text-3xl lg:text-5xl text-gray-900 mb-6">
-                            Molino Hernando de Villafañe
+                            {t('title')}
                         </h2>
 
                         <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                            Fundado en 1987 por Don Enrique Terminel Fonseca, nuestro molino produce
-                            <strong className="text-terminel-green"> harinas de trigo de alta calidad</strong> con
-                            tecnología de última generación.
+                            {t.rich('intro', {
+                                green: (chunks) => <strong className="text-terminel-green"> {chunks}</strong>
+                            })}
                         </p>
 
                         <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                            Con una capacidad de almacenamiento de 28,000 toneladas y procesamiento de 4,200 toneladas
-                            mensuales, hemos consolidado marcas regionales reconocidas por su consistencia y calidad.
+                            {t('description')}
                         </p>
 
                         <div className="bg-white rounded-xl p-6 border-l-4 border-terminel-green shadow-md">
                             <p className="text-gray-700 leading-relaxed">
-                                <strong className="text-terminel-green">Modernización 2016:</strong> Actualización completa
-                                de equipos de molienda con tecnología de precisión que garantiza harinas uniformes
-                                y de excelente calidad para panificación industrial y doméstica.
+                                <strong className="text-terminel-green">{t('modernization_title')}</strong> {t('modernization_desc')}
                             </p>
                         </div>
                     </motion.div>

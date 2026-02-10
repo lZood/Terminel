@@ -2,39 +2,41 @@
 
 import { motion } from 'framer-motion'
 import { Calendar, ArrowRight } from 'lucide-react'
-import Link from 'next/link'
 import Image from 'next/image'
-import { formatDate } from '@/lib/utils'
-
-// Latest 3 articles from the blog
-const newsArticles = [
-    {
-        id: 1,
-        title: 'Grupo Terminel inaugura moderna planta envasadora "Los Valles" en 2026',
-        excerpt: 'Con una inversión superior a los $50 millones de pesos, la nueva planta certificada bajo ISO 22000:2018 revolucionará nuestro proceso de empaquetado de granos básicos.',
-        category: 'Empresa',
-        publishedAt: '2026-02-08',
-        imageUrl: 'https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?w=800&q=80',
-    },
-    {
-        id: 2,
-        title: 'Grupo Terminel firma alianza estratégica con Asgrow para temporada 2026',
-        excerpt: 'Fortalecemos nuestra oferta de semillas premium para productores con las mejores variedades de maíz blanco adaptadas al clima de Sinaloa.',
-        category: 'Empresa',
-        publishedAt: '2026-02-05',
-        imageUrl: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80',
-    },
-    {
-        id: 3,
-        title: 'Modernización de silos en Bamoa: Mayor capacidad de almacenamiento',
-        excerpt: 'Inversión de $15 millones mejora infraestructura y aumenta capacidad en 20,000 toneladas adicionales, fortaleciendo nuestra red de acopio regional.',
-        category: 'Empresa',
-        publishedAt: '2026-02-01',
-        imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80',
-    },
-]
+import { useTranslations, useFormatter } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
 export default function LatestNews() {
+    const t = useTranslations('LatestNews')
+    const format = useFormatter()
+
+    const newsArticles = [
+        {
+            id: 1,
+            title: t('articles.article1.title'),
+            excerpt: t('articles.article1.excerpt'),
+            category: t('articles.article1.category'),
+            publishedAt: '2026-02-08',
+            imageUrl: 'https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?w=800&q=80',
+        },
+        {
+            id: 2,
+            title: t('articles.article2.title'),
+            excerpt: t('articles.article2.excerpt'),
+            category: t('articles.article2.category'),
+            publishedAt: '2026-02-05',
+            imageUrl: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80',
+        },
+        {
+            id: 3,
+            title: t('articles.article3.title'),
+            excerpt: t('articles.article3.excerpt'),
+            category: t('articles.article3.category'),
+            publishedAt: '2026-02-01',
+            imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80',
+        },
+    ]
+
     return (
         <section className="section-spacing bg-gradient-to-br from-gray-50 to-white">
             <div className="container-custom">
@@ -47,17 +49,17 @@ export default function LatestNews() {
                 >
                     <div>
                         <h2 className="font-heading font-bold text-3xl lg:text-5xl text-terminel-green mb-4">
-                            Últimas Noticias
+                            {t('title')}
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl">
-                            Mantente informado sobre nuestros logros, expansiones y eventos
+                            {t('description')}
                         </p>
                     </div>
                     <Link
                         href="/noticias"
                         className="hidden lg:flex items-center space-x-2 text-terminel-green font-semibold hover:text-terminel-green-600 transition-colors group"
                     >
-                        <span>Ver todas</span>
+                        <span>{t('view_all')}</span>
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </motion.div>
@@ -92,7 +94,7 @@ export default function LatestNews() {
                                     <div className="p-6 flex-grow flex flex-col">
                                         <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
                                             <Calendar size={14} />
-                                            <time>{formatDate(article.publishedAt)}</time>
+                                            <time>{format.dateTime(new Date(article.publishedAt), { year: 'numeric', month: 'long', day: 'numeric' })}</time>
                                         </div>
 
                                         <h3 className="font-heading font-semibold text-xl text-gray-900 mb-3 group-hover:text-terminel-green transition-colors line-clamp-2">
@@ -104,7 +106,7 @@ export default function LatestNews() {
                                         </p>
 
                                         <div className="flex items-center space-x-2 text-terminel-green font-semibold text-sm group-hover:translate-x-1 transition-transform">
-                                            <span>Leer más</span>
+                                            <span>{t('read_more')}</span>
                                             <ArrowRight size={14} />
                                         </div>
                                     </div>
@@ -120,7 +122,7 @@ export default function LatestNews() {
                         href="/noticias"
                         className="btn-outline inline-flex items-center space-x-2"
                     >
-                        <span>Ver todas las noticias</span>
+                        <span>{t('view_all_mobile')}</span>
                         <ArrowRight size={18} />
                     </Link>
                 </div>

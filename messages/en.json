@@ -1,0 +1,637 @@
+{
+    "NewsHero": {
+        "badge": "Official Blog",
+        "title": "Voice of the Field",
+        "subtitle": "News, updates, and trends from Grupo Terminel. Stay informed about the agro-industry in Sinaloa.",
+        "years_experience": "Of experience",
+        "years_value": "55+ years",
+        "producers_allied": "Allied Producers",
+        "growth": "Continuous Growth"
+    },
+    "ServicesPage": {
+        "meta_title": "Services - Terminel Group | Storage, Mill and Los Valles Plant",
+        "meta_desc": "Comprehensive agro-industrial services: 110,000 ton storage, Hernando de Villafañe Mill, Los Valles Plant (8 ton/h), financing and technical advice.",
+        "meta_keywords": "Grain Storage Sinaloa, Flour Mill Guasave, Los Valles Plant, Agricultural Services, Agricultural Financing"
+    },
+    "NewsGrid": {
+        "showing_articles": "Showing <strong>{count}</strong> {count, plural, one {article} other {articles}}",
+        "read_full_article": "Read full article",
+        "no_articles_title": "No articles in this category",
+        "no_articles_desc": "Try selecting another category",
+        "view_all": "View all articles",
+        "categories": {
+            "all": "All",
+            "company": "Company",
+            "trends": "Trends",
+            "weather_alerts": "Weather Alerts",
+            "success_stories": "Success Stories"
+        },
+        "articles": {
+            "2": {
+                "title": "Terminel Group signs strategic alliance with Asgrow for 2026 season",
+                "excerpt": "We strengthen our premium seed offering for producers with the best white maize varieties adapted to the Sinaloa climate."
+            },
+            "3": {
+                "title": "Modernization of silos in Bamoa: Greater storage capacity",
+                "excerpt": "$15 million investment improves infrastructure and increases capacity by an additional 20,000 tons."
+            },
+            "4": {
+                "title": "Local producers exceed 2025 chickpea harvest expectations",
+                "excerpt": "Don Miguel Torres from Ruiz Cortines achieved yield of 3.2 ton/ha with technical advice from our agronomy team."
+            },
+            "5": {
+                "title": "Favorable forecast: Rainy season will benefit spring-summer cycle",
+                "excerpt": "Regional climate analysis indicates optimal conditions for maize and beans in the coming months."
+            },
+            "6": {
+                "title": "International corn price reaches all-time high in January",
+                "excerpt": "International markets favor Mexican exports. Analysis of opportunities for producers."
+            },
+            "7": {
+                "title": "Terminel Group receives Great Place to Work 2024 certification",
+                "excerpt": "Recognition highlights our commitment to the well-being of over 200 collaborators across the region."
+            },
+            "8": {
+                "title": "New digital training for producers: Terminel Portal 2.0",
+                "excerpt": "We launch free online training program on agricultural technology, planting management, and marketing for all our allies."
+            },
+            "9": {
+                "title": "We celebrate Producer Day with over 500 farmers from the region",
+                "excerpt": "Annual event gathered producers from Guasave, Los Mochis, and Bamoa with keynote lectures on agricultural innovation and networking."
+            },
+            "10": {
+                "title": "Alert: Recommendations for possible drought period in March",
+                "excerpt": "Our meteorological team suggests efficient irrigation strategies and resistant varieties to mitigate climate risks."
+            },
+            "11": {
+                "title": "Record export: Sinaloa chickpea breaks figures in Asian markets",
+                "excerpt": "India and Turkey increase demand by 35% compared to previous year. Historic opportunity for local producers."
+            },
+            "12": {
+                "title": "Success Story: Mendoza family doubles production with precision agriculture",
+                "excerpt": "Implementation of GPS technology and moisture sensors increased yield from 8 to 17 ton/ha in maize cultivation."
+            },
+            "13": {
+                "title": "Terminel Group launches scholarship program for producers' children",
+                "excerpt": "$2 million investment in education: 50 full scholarships for careers in agronomy, engineering, and administration."
+            }
+        }
+    },
+    "FeaturedNews": {
+        "badge": "Featured",
+        "title": "Latest News",
+        "read_more": "Read more",
+        "read_time": "{time} read",
+        "by": "By",
+        "article": {
+            "title": "Terminel Group inaugurates modern 'Los Valles' packaging plant in 2026",
+            "excerpt": "With an investment exceeding $50 million pesos, the new ISO 22000:2018 certified plant will revolutionize our basic grain packaging process, expanding our production capacity and generating over 100 direct jobs in the region.",
+            "category": "Company",
+            "author": "Terminel Group"
+        }
+    },
+    "NewsPage": {
+        "meta_title": "Voice of the Field - Terminel Group News",
+        "meta_desc": "Stay informed about the latest news from Terminel Group, agro-industrial trends, weather alerts, and producer success stories in Sinaloa.",
+        "meta_keywords": "agricultural news, Terminel Group news, Sinaloa agriculture, weather alerts, producer success stories, agro-industrial trends"
+    },
+    "ToolsPage": {
+        "meta_title": "Tools for Producers - Terminel Group",
+        "meta_desc": "Digital tools for producers: silo map, profitability calculator and technical library with Asgrow, Yara sheets and more.",
+        "meta_keywords": "Agricultural Calculator, Silo Map Sinaloa, Asgrow Technical Sheets, Producer Tools, Profitability Simulator"
+    },
+    "TechnicalLibrary": {
+        "badge": "Digital Technical Library",
+        "title": "Resources for Your Crop",
+        "description": "Access technical sheets, product catalogs, and practical guides to optimize your production",
+        "search_placeholder": "Search by name, brand, or keyword...",
+        "download": "Download",
+        "no_results": "No documents found matching your search",
+        "contact_title": "Can't find what you're looking for?",
+        "contact_desc": "Contact our technical advisory team to request additional documents",
+        "contact_button": "📞 Contact Advisor",
+        "categories": {
+            "all": "All",
+            "seeds": "Seeds",
+            "fertilizers": "Fertilizers",
+            "protection": "Protection",
+            "guides": "Guides"
+        },
+        "docs": {
+            "asgrow-maize-2026": {
+                "title": "Asgrow Maize Catalog 2026",
+                "description": "White and yellow maize varieties for Sinaloa"
+            },
+            "asgrow-soy": {
+                "title": "Soybean Variety Guide",
+                "description": "Characteristics and yields of Asgrow soybeans"
+            },
+            "yara-premium": {
+                "title": "Yara Premium Line",
+                "description": "Technical specifications of premium fertilizers"
+            },
+            "yara-application": {
+                "title": "Yara Application Guide",
+                "description": "Recommended dosage and application times"
+            },
+            "monsanto-roundup": {
+                "title": "Roundup - Technical Sheet",
+                "description": "Safe and effective use of Roundup herbicides"
+            },
+            "best-practices-maize": {
+                "title": "Best Practices: Maize in Sinaloa",
+                "description": "Complete guide to maize production in the Guasave Valley"
+            },
+            "water-management": {
+                "title": "Efficient Water Management",
+                "description": "Irrigation techniques and water conservation"
+            },
+            "garbanzo-export": {
+                "title": "Chickpea: Export Quality",
+                "description": "Quality standards for international markets"
+            }
+        }
+    },
+    "ProfitabilitySimulator": {
+        "badge": "Profitability Simulator",
+        "title": "Calculate Your Profitability",
+        "description": "Estimate your production and economic performance based on current market prices",
+        "form": {
+            "title": "Your Crop Data",
+            "crop_label": "Crop Type",
+            "hectares_label": "Cultivated Hectares",
+            "hectares_placeholder": "Ex: 50",
+            "yield_label": "Expected Yield (ton/ha)",
+            "yield_avg": "Regional average: <bold>{yield}</bold> {unit}",
+            "yield_placeholder": "Regional average: {yield} ton/ha",
+            "price_label": "Price per Ton (MXN) - Optional",
+            "price_placeholder": "Leave blank to use current price",
+            "price_current": "Current price: {price}",
+            "cbot_current": "💹 Current CBOT price: {price}/ton",
+            "calculate_button": "Calculate Profitability",
+            "calculating_button": "Calculating...",
+            "alert_hectares": "Please enter a valid number of hectares"
+        },
+        "results": {
+            "title": "Yield Estimation",
+            "gross_revenue": "Estimated Gross Revenue",
+            "total_production": "Total Production",
+            "tons_of": "tons of {crop}",
+            "price_per_ton": "Price per Ton",
+            "mxn_per_ton": "MXN/ton",
+            "cta_text": "Need financing for your agricultural cycle?",
+            "cta_button": "Apply for Enablement Credit",
+            "empty_state": "Complete your crop data to see your profitability estimation"
+        },
+        "crops": {
+            "maiz": "White Corn",
+            "garbanzo": "Chickpea",
+            "frijol": "Bean",
+            "trigo": "Wheat"
+        }
+    },
+    "PriceAlerts": {
+        "badge": "Alert System",
+        "title": "Real-Time Price Alerts",
+        "intro": "Receive instant notifications when the prices of your crops reach the value you are looking for. Never miss a sales opportunity.",
+        "success_title": "Subscription Successful!",
+        "success_desc": "We will notify you when the price of <bold>{crop}</bold> reaches <bold>${price}/ton</bold>.",
+        "form": {
+            "name_label": "Full Name *",
+            "name_placeholder": "John Doe",
+            "crop_label": "Crop *",
+            "email_label": "Email Address *",
+            "email_placeholder": "john@example.com",
+            "phone_label": "Phone (WhatsApp)",
+            "phone_placeholder": "687 123 4567",
+            "price_label": "Target Price (MXN/ton) *",
+            "price_placeholder": "5,500.00",
+            "price_help": "We will notify you when the price reaches or exceeds this value",
+            "notification_label": "Notification Type *",
+            "notification_email": "Email",
+            "notification_sms": "SMS",
+            "notification_both": "Both",
+            "submit_button": "Activate Alerts",
+            "submitting_button": "Subscribing...",
+            "privacy": "By subscribing, you agree to receive price notifications. You can cancel at any time."
+        },
+        "features": {
+            "realtime_title": "Real-Time Data",
+            "realtime_desc": "Prices updated every hour from national and international markets.",
+            "instant_title": "Instant Notifications",
+            "instant_desc": "Receive alerts in less than 5 minutes when the price reaches your target.",
+            "free_title": "100% Free",
+            "free_desc": "No hidden costs. Exclusive service for producers associated with Terminel."
+        },
+        "crops": {
+            "maiz": "White Corn",
+            "garbanzo": "Chickpea",
+            "frijol": "Bean",
+            "trigo": "Wheat"
+        }
+    },
+    "InteractiveSiloMap": {
+        "badge": "Strategic Locations",
+        "title": "Our Collection Centers",
+        "description": "Find the collection center closest to you. All our silos are strategically located with direct access to main roads.",
+        "status_operative": "Operational",
+        "status_closed": "Closed",
+        "label_main": "Main",
+        "btn_directions": "Get Directions",
+        "btn_map": "View on Map",
+        "footer_title": "Regional Presence",
+        "footer_desc": "Our 4 collection centers are strategically located in the northern region of Sinaloa, guaranteeing complete coverage for producers in the Guasave Valley and Los Mochis. <green>Share your exact location</green> and we will help you find the nearest center.",
+        "locations": {
+            "guasave-centro": {
+                "name": "Guasave Center",
+                "address": "100th St. and Rd. to Las Glorias, Guasave, Sinaloa"
+            },
+            "ruiz-cortines": {
+                "name": "Pinitos Warehouse",
+                "address": "International Hwy km 168+500, Ruiz Cortines, Sinaloa"
+            },
+            "bamoa": {
+                "name": "Bamoa Warehouse",
+                "address": "Bamoa Station, Sinaloa"
+            },
+            "los-mochis": {
+                "name": "Flor Azul Warehouse",
+                "address": "International Hwy and Flor Azul, Ahome, Sinaloa"
+            }
+        }
+    },
+    "MolinoSection": {
+        "badge": "Since 1987",
+        "title": "Hernando de Villafañe Mill",
+        "intro": "Founded in 1987 by Don Enrique Terminel Fonseca, our mill produces <green>high-quality wheat flours</green> with state-of-the-art technology.",
+        "description": "With a storage capacity of 28,000 tons and processing of 4,200 tons monthly, we have consolidated regional brands recognized for their consistency and quality.",
+        "modernization_title": "2016 Modernization:",
+        "modernization_desc": "Complete update of milling equipment with precision technology that guarantees uniform and excellent quality flours for industrial and domestic baking.",
+        "specs": {
+            "storage": {
+                "label": "Storage Capacity",
+                "value": "28,000 Tons"
+            },
+            "processing": {
+                "label": "Monthly Processing",
+                "value": "4,200 Tons"
+            },
+            "years": {
+                "label": "Years of Operation",
+                "value": "37+ Years"
+            },
+            "products": {
+                "label": "Products",
+                "value": "3 Brands"
+            }
+        },
+        "brands_title": "Own Brands:",
+        "brands": [
+            "Rica Sinaloa",
+            "Doña Güera",
+            "Premium Flours"
+        ]
+    },
+    "LosVallesSection": {
+        "badge": "✨ OPENED JANUARY 2026",
+        "title": "\"Los Valles\" Packaging Plant",
+        "subtitle": "Our most recent investment in infrastructure, fulfilling Don Enrique Terminel's dream of adding value beyond traditional storage",
+        "stat_capacity_title": "8 Ton/Hour",
+        "stat_capacity_desc": "State-of-the-art processing capacity",
+        "stat_storage_title": "4,600",
+        "stat_storage_desc": "Tons of Storage",
+        "stat_bags_title": "25kg",
+        "stat_bags_desc": "Packaged Sacks",
+        "processed_products_title": "Processed Products:",
+        "products": [
+            "Export Chickpea",
+            "Premium Bean",
+            "Selected Wheat"
+        ],
+        "features": {
+            "processing": {
+                "title": "Fast Processing",
+                "desc": "8 tons per hour with cutting-edge technology"
+            },
+            "packaging": {
+                "title": "Professional Packaging",
+                "desc": "25 kg sacks ready for distribution"
+            },
+            "quality": {
+                "title": "Quality Control",
+                "desc": "Cleaning and drying with ISO standards"
+            },
+            "social": {
+                "title": "Social Impact",
+                "desc": "Benefits more than 400 local producers"
+            }
+        },
+        "quote": "\"This plant represents our commitment to the agricultural development of Sinaloa. We not only process grains, we generate opportunities for hundreds of producer families.\"",
+        "quote_author": "Alejandro Terminel Rojo",
+        "quote_role": "General Director"
+    },
+    "ComplementaryServices": {
+        "title": "Complementary Services",
+        "subtitle": "Because we understand that agricultural success requires more than storage, we offer a complete support ecosystem",
+        "financing": {
+            "title": "Agricultural Financing",
+            "desc": "Enabling credits, payment advances, and price guarantees to maximize your cash flow during the agricultural cycle.",
+            "benefits": [
+                "Immediate advances",
+                "Competitive rates",
+                "Agile procedures"
+            ]
+        },
+        "advisory": {
+            "title": "Technical Advisory",
+            "desc": "Expert agronomists who accompany you from sowing to harvest, optimizing yields with scientific basis.",
+            "benefits": [
+                "Soil analysis",
+                "Nutritional plan",
+                "Crop monitoring"
+            ]
+        },
+        "supplies": {
+            "title": "Supplies Distribution",
+            "desc": "Alliances with the best global brands: Asgrow seeds, Yara fertilizers, and precision nutrition.",
+            "benefits": [
+                "Asgrow Seeds",
+                "Yara Fertilizers",
+                "Quality guarantee"
+            ]
+        },
+        "insurance": {
+            "title": "Insurance Funds",
+            "desc": "Protection against climatic risks and guarantees that back your investment and effort.",
+            "benefits": [
+                "Broad coverage",
+                "Institutional backing",
+                "Total peace of mind"
+            ]
+        },
+        "cta_title": "Ready to maximize your production?",
+        "cta_desc": "Join more than 400 producers who trust Grupo Terminel for their agricultural operations",
+        "cta_portal": "Access Portal",
+        "cta_contact": "Contact an Advisor"
+    },
+    "AcopioSection": {
+        "badge": "Operations Core",
+        "title": "Massive Storage",
+        "description_1": "With a storage capacity of <green>110,000 tons</green>, our collection centers are strategically located to serve more than 400 producers throughout Sinaloa.",
+        "description_2": "Modern infrastructure on the Mexico 15 highway that speeds up national and international distribution. Certified weighing systems and rigorous quality control at every entry.",
+        "feature_scale": "Certified Scale",
+        "feature_scale_desc": "Precise weighing with real-time tickets",
+        "feature_logistics": "Efficient Logistics",
+        "feature_logistics_desc": "National and international distribution",
+        "locations_title": "Strategic Locations:",
+        "locations": {
+            "guasave_centro": "Guasave Center",
+            "ruiz_cortines": "Ruiz Cortines",
+            "bamoa": "Bamoa",
+            "los_mochis": "Los Mochis"
+        },
+        "grains": {
+            "white_corn": "White Corn",
+            "capacity": "110,000 ton",
+            "chickpea": "Chickpea",
+            "export": "15+ countries",
+            "bean": "Bean",
+            "quality": "Premium",
+            "wheat": "Wheat",
+            "variety": "Multiple varieties"
+        }
+    },
+    "ToolsHero": {
+        "badge": "Digital Tools",
+        "title": "Technology at the Service of the Field",
+        "subtitle": "Practical tools designed to maximize your profitability and facilitate your agricultural decisions",
+        "silo_map": "Silo Map",
+        "calculator": "Calculator",
+        "tech_library": "Technical Library",
+        "price_alerts": "Price Alerts"
+    },
+    "ServicesHero": {
+        "badge": "Comprehensive Services",
+        "title": "Complete Solutions for the Countryside",
+        "subtitle": "From storage to industrialization, we offer a complete value chain that maximizes your profitability"
+    },
+    "Certifications": {
+        "title": "Certifications and Recognitions",
+        "description": "Our commitment to excellence is backed by international certifications and recognitions that validate our quality and responsibility",
+        "achievements_title": "Key Achievements:",
+        "cta_text": "Our commitment to quality and responsibility is constant. We continue working to maintain and exceed these standards.",
+        "cta_button": "Discover our certified services",
+        "gptw": {
+            "title": "Great Place to Work",
+            "desc": "First company in Guasave certified as a great place to work. This recognition validates our commitment to the well-being, professional development, and inclusion of our team.",
+            "achievements": [
+                "Inclusive work environment",
+                "Continuous professional development",
+                "Recognition culture",
+                "Work-life balance"
+            ]
+        },
+        "iso": {
+            "title": "ISO 22000:2018",
+            "desc": "International certification in food safety management, guaranteeing the safety of our products from collection to final delivery to the consumer.",
+            "achievements": [
+                "Complete traceability",
+                "Rigorous quality controls",
+                "International regulatory compliance",
+                "Documented continuous improvement"
+            ]
+        },
+        "esr": {
+            "title": "Socially Responsible Company",
+            "desc": "Distinction awarded for our commitment to social responsibility, environmental care, and business ethics in all our operations.",
+            "achievements": [
+                "Sustainable practices",
+                "Support for the local community",
+                "Business ethics",
+                "Environmental commitment"
+            ]
+        }
+    },
+    "Leadership": {
+        "title": "Leadership",
+        "subtitle": "Family vision that transcends generations",
+        "alejandro": {
+            "name": "Alejandro Terminel Rojo",
+            "role": "General Director",
+            "bio_1": "Son of founder Enrique Terminel Fonseca, Alejandro leads the second generation of Grupo Terminel with a clear vision: to add value beyond traditional storage and strengthen the Sinaloan countryside.",
+            "bio_2": "Under his direction, the company has achieved significant milestones such as the inauguration of Los Valles Plant, Great Place to Work certification, and the expansion of chickpea exports to more than 15 countries.",
+            "quote": "\"Building Los Valles fulfilled my father's dream of generating more value for our producers. We remain committed to the agricultural development of Sinaloa.\""
+        },
+        "enrique": {
+            "name": "Enrique Terminel Fonseca",
+            "role": "Founder (1970)",
+            "bio_1": "Visionary entrepreneur who in the 70s identified the agricultural potential of the Guasave Valley. With the support of local collaborators, he began the purchase and sale of grains that eventually consolidated as the current Grupo Terminel.",
+            "bio_2": "His legacy includes the founding of Molino Hernando de Villafañe in 1987 and the proprietary brands \"La Trinidad\" and \"Don Enrique\", which are today synonymous with quality in the region."
+        },
+        "contact": "Contact"
+    },
+    "AboutHero": {
+        "since": "Since 1970",
+        "title": "Our History",
+        "story_desc": "A family journey of more than five decades strengthening the Sinaloan countryside with vision, commitment, and tangible results"
+    },
+    "Hero": {
+        "anniversary_years": "55 YEARS",
+        "anniversary_period": "1970 - 2025",
+        "headline_prefix": "Cultivating the",
+        "headline_highlight": "Future",
+        "headline_suffix": "of Sinaloa's Fields",
+        "tagline": "Harvesting Trust",
+        "description": "Agro-industrial leader in grain collection, processing, and marketing. Exporting Sinaloan quality to more than 15 countries with ISO 22000:2018 certification.",
+        "stats": {
+            "tons_label": "Tons",
+            "producers_label": "Producers",
+            "countries_label": "Countries"
+        },
+        "buttons": {
+            "services": "Our Services",
+            "history": "Our History"
+        },
+        "scroll": "Discover more"
+    },
+    "DynamicWidgets": {
+        "weather_title": "Guasave Weather",
+        "humidity": "Humidity",
+        "not_available": "Not available",
+        "dam_level_title": "Dam Levels",
+        "regional_capacity": "Avg. regional capacity",
+        "cbot_title": "Corn Price (CBOT)",
+        "corn_cbot": "Corn (CBOT)",
+        "usd_per_bushel": "USD per bushel"
+    },
+    "ImpactMetrics": {
+        "title": "Impact by the Numbers",
+        "description": "More than five decades strengthening the Mexican countryside with tangible results",
+        "metrics": {
+            "producers_label": "Benefited Producers",
+            "producers_desc": "Allies of the Sinaloa countryside",
+            "countries_label": "Export Countries",
+            "countries_desc": "Sinaloa chickpeas to the world",
+            "capacity_label": "Capacity in Tons",
+            "capacity_desc": "Storage and processing",
+            "experience_label": "Years of Experience",
+            "experience_desc": "Agro-industrial leadership"
+        },
+        "cta_text": "Discover how we can boost your agricultural production",
+        "cta_button": "Learn about our services"
+    },
+    "ServicesOverview": {
+        "title": "Comprehensive Services",
+        "description": "From collection to industrialization, we offer complete solutions to maximize the value of your production",
+        "services": {
+            "acopio_title": "Massive Grain Collection",
+            "acopio_desc": "Storage capacity of 110,000 tons with strategic infrastructure throughout Sinaloa.",
+            "acopio_features": "White Corn,Chickpea,Bean,Wheat",
+            "molino_title": "Hernando de Villafañe Mill",
+            "molino_desc": "Production of high-quality wheat flours since 1987 with regionally recognized brands.",
+            "molino_features": "Rica Sinaloa,Doña Güera,Premium Flours",
+            "planta_title": "Los Valles Plant",
+            "planta_desc": "New 2026 facility for cleaning, drying, and packaging with cutting-edge technology.",
+            "planta_features": "Chickpea,Bean,Wheat,25kg Packaging"
+        },
+        "learn_more": "Learn more",
+        "complementary_title": "Complementary Services",
+        "complementary_desc": "Agricultural financing, technical advice, input distribution (Asgrow, Yara), and assurance funds to guarantee the success of your harvest",
+        "view_all": "View all services"
+    },
+    "TrustIndicators": {
+        "title": "Trust that Transcends",
+        "description": "Our commitment to quality, social responsibility, and sustainable development is backed by international certifications",
+        "certifications": {
+            "gptw_title": "Great Place to Work",
+            "gptw_desc": "First company in Guasave certified as an excellent place to work",
+            "gptw_year": "2024",
+            "iso_title": "ISO 22000:2018",
+            "iso_desc": "Certification in food safety management and international standards",
+            "iso_year": "Current",
+            "esr_title": "Socially Responsible Company",
+            "esr_desc": "ESR distinction in recognition of our social and environmental commitment",
+            "esr_year": "2025",
+            "sustainability_title": "Sustainability",
+            "sustainability_desc": "Sustainable and environmentally responsible agricultural practices",
+            "sustainability_year": "Continuous"
+        },
+        "quote": {
+            "text": "Building the Los Valles Plant fulfilled my father's dream of adding value beyond traditional collection. We remain committed to strengthening the Sinaloa countryside.",
+            "author": "Alejandro Terminel Rojo",
+            "role": "General Director, Terminel Group"
+        }
+    },
+    "LatestNews": {
+        "title": "Latest News",
+        "description": "Stay informed about our achievements, expansions, and events",
+        "view_all": "View all",
+        "read_more": "Read more",
+        "view_all_mobile": "View all news",
+        "articles": {
+            "article1": {
+                "title": "Terminel Group inaugurates modern \"Los Valles\" packaging plant in 2026",
+                "excerpt": "With an investment exceeding $50 million pesos, the new ISO 22000:2018 certified plant will revolutionize our basic grain packaging process.",
+                "category": "Company"
+            },
+            "article2": {
+                "title": "Terminel Group signs strategic alliance with Asgrow for 2026 season",
+                "excerpt": "We strengthen our premium seed offering for producers with the best white corn varieties adapted to the Sinaloa climate.",
+                "category": "Company"
+            },
+            "article3": {
+                "title": "Silo modernization in Bamoa: Increased storage capacity",
+                "excerpt": "$15 million investment improves infrastructure and increases capacity by an additional 20,000 tons, strengthening our regional collection network.",
+                "category": "Company"
+            }
+        }
+    },
+    "CTASection": {
+        "title": "Are you an Agricultural Producer?",
+        "description": "Access our exclusive portal to consult weigh tickets, settlements, and manage your documents in real time",
+        "features": {
+            "tickets_title": "Real-time Weigh Tickets",
+            "tickets_desc": "Consult your weigh tickets instantly",
+            "settlements_title": "Settlements",
+            "settlements_desc": "Payment and credit tracking",
+            "support_title": "Direct Support",
+            "support_desc": "Chat with the payments department"
+        },
+        "portal_button": "Access Portal",
+        "about_button": "Learn More About Us"
+    },
+    "Footer": {
+        "brand_desc": "Leading agricultural modernization in Sinaloa since 1970. Committed to the success of our producers and agro-industrial excellence.",
+        "columns": {
+            "company": "Company",
+            "services": "Services",
+            "contact": "Contact"
+        },
+        "links": {
+            "about": "About Us",
+            "services": "Services",
+            "tools": "Tools",
+            "sustainability": "Sustainability",
+            "careers": "Careers",
+            "news": "News",
+            "storage": "Mass Storage",
+            "mill": "Wheat Mill",
+            "packaging": "Packaging Plant",
+            "portal": "Producer Portal",
+            "privacy": "Privacy Notice",
+            "terms": "Terms of Use",
+            "ethics": "Ethics and Responsibility"
+        },
+        "copyright": "All rights reserved."
+    },
+    "Header": {
+        "nav": {
+            "about": "About Us",
+            "services": "Services",
+            "tools": "Tools",
+            "technology": "Technology",
+            "news": "News"
+        },
+        "portal_button": "Producer Portal"
+    }
+}

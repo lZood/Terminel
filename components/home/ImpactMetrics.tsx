@@ -3,39 +3,44 @@
 import { motion } from 'framer-motion'
 import { Users, Globe, Package, Trophy } from 'lucide-react'
 import { formatNumber } from '@/lib/utils'
-
-const metrics = [
-    {
-        icon: Users,
-        value: '400+',
-        label: 'Productores Beneficiados',
-        description: 'Aliados del campo sinaloense',
-        color: 'from-green-500 to-terminel-green',
-    },
-    {
-        icon: Globe,
-        value: '15+',
-        label: 'Países de Exportación',
-        description: 'Garbanzo sinaloense al mundo',
-        color: 'from-harvest-gold-400 to-harvest-gold-600',
-    },
-    {
-        icon: Package,
-        value: '1M',
-        label: 'Toneladas de Capacidad',
-        description: 'Almacenamiento y procesamiento',
-        color: 'from-blue-500 to-blue-600',
-    },
-    {
-        icon: Trophy,
-        value: '55',
-        label: 'Años de Experiencia',
-        description: 'Liderazgo agroindustrial',
-        color: 'from-purple-500 to-purple-600',
-    },
-]
-
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 export default function ImpactMetrics() {
+    const t = useTranslations('ImpactMetrics')
+
+    // Since we need to map over metrics with translated values, we can't use the static array outside component easily if we want it reactive.
+    // But we can construct it inside using t.
+    const metricsData = [
+        {
+            icon: Users,
+            value: '400+',
+            label: t('metrics.producers_label'),
+            description: t('metrics.producers_desc'),
+            color: 'from-green-500 to-terminel-green',
+        },
+        {
+            icon: Globe,
+            value: '15+',
+            label: t('metrics.countries_label'),
+            description: t('metrics.countries_desc'),
+            color: 'from-harvest-gold-400 to-harvest-gold-600',
+        },
+        {
+            icon: Package,
+            value: '1M',
+            label: t('metrics.capacity_label'),
+            description: t('metrics.capacity_desc'),
+            color: 'from-blue-500 to-blue-600',
+        },
+        {
+            icon: Trophy,
+            value: '55',
+            label: t('metrics.experience_label'),
+            description: t('metrics.experience_desc'),
+            color: 'from-purple-500 to-purple-600',
+        },
+    ]
+
     return (
         <section className="section-spacing bg-white">
             <div className="container-custom">
@@ -47,16 +52,16 @@ export default function ImpactMetrics() {
                     className="text-center mb-16"
                 >
                     <h2 className="font-heading font-bold text-3xl lg:text-5xl text-terminel-green mb-4">
-                        Impacto en Números
+                        {t('title')}
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Más de cinco décadas fortaleciendo el campo mexicano con resultados tangibles
+                        {t('description')}
                     </p>
                 </motion.div>
 
                 {/* Metrics Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {metrics.map((metric, index) => (
+                    {metricsData.map((metric, index) => (
                         <motion.div
                             key={metric.label}
                             initial={{ opacity: 0, y: 30 }}
@@ -98,15 +103,15 @@ export default function ImpactMetrics() {
                     className="mt-12 text-center"
                 >
                     <p className="text-gray-600 mb-4">
-                        Descubre cómo podemos impulsar tu producción agrícola
+                        {t('cta_text')}
                     </p>
-                    <a
+                    <Link
                         href="/servicios"
                         className="inline-flex items-center space-x-2 text-terminel-green font-semibold hover:text-terminel-green-600 transition-colors group"
                     >
-                        <span>Conoce nuestros servicios</span>
+                        <span>{t('cta_button')}</span>
                         <span className="group-hover:translate-x-1 transition-transform">→</span>
-                    </a>
+                    </Link>
                 </motion.div>
             </div>
         </section>

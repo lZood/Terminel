@@ -3,11 +3,13 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Bell, Mail, Smartphone, TrendingUp, CheckCircle2 } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 type NotificationType = 'email' | 'sms' | 'both'
 type CropType = 'maiz' | 'garbanzo' | 'frijol' | 'trigo'
 
 export default function PriceAlerts() {
+    const t = useTranslations('PriceAlerts')
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -20,10 +22,10 @@ export default function PriceAlerts() {
     const [isLoading, setIsLoading] = useState(false)
 
     const crops = [
-        { value: 'maiz', label: 'Maíz Blanco', unit: 'MXN/ton' },
-        { value: 'garbanzo', label: 'Garbanzo', unit: 'MXN/ton' },
-        { value: 'frijol', label: 'Frijol', unit: 'MXN/ton' },
-        { value: 'trigo', label: 'Trigo', unit: 'MXN/ton' },
+        { value: 'maiz', unit: 'MXN/ton' },
+        { value: 'garbanzo', unit: 'MXN/ton' },
+        { value: 'frijol', unit: 'MXN/ton' },
+        { value: 'trigo', unit: 'MXN/ton' },
     ]
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -44,9 +46,9 @@ export default function PriceAlerts() {
                 name: '',
                 email: '',
                 phone: '',
-                crop: 'maiz',
+                crop: 'maiz' as CropType,
                 targetPrice: '',
-                notificationType: 'email',
+                notificationType: 'email' as NotificationType,
             })
         }, 3000)
     }
@@ -68,11 +70,14 @@ export default function PriceAlerts() {
                             <CheckCircle2 size={48} className="text-white" />
                         </div>
                         <h3 className="font-heading font-bold text-2xl text-terminel-green mb-4">
-                            ¡Suscripción Exitosa!
+                            {t('success_title')}
                         </h3>
                         <p className="text-gray-700 leading-relaxed">
-                            Te notificaremos cuando el precio de <strong>{crops.find(c => c.value === formData.crop)?.label}</strong> alcance{' '}
-                            <strong>${Number(formData.targetPrice).toLocaleString('es-MX')}/ton</strong>.
+                            {t.rich('success_desc', {
+                                crop: t(`crops.${formData.crop}`),
+                                price: Number(formData.targetPrice).toLocaleString('es-MX'),
+                                bold: (chunks) => <strong>{chunks}</strong>
+                            })}
                         </p>
                     </motion.div>
                 </div>
@@ -93,16 +98,15 @@ export default function PriceAlerts() {
                     >
                         <div className="inline-flex items-center space-x-2 bg-terminel-green/10 text-terminel-green px-4 py-2 rounded-full font-semibold text-sm mb-6">
                             <Bell size={18} />
-                            <span>Sistema de Alertas</span>
+                            <span>{t('badge')}</span>
                         </div>
 
                         <h2 className="font-heading font-bold text-3xl lg:text-5xl text-terminel-green mb-4">
-                            Alertas de Precios en Tiempo Real
+                            {t('title')}
                         </h2>
 
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Recibe notificaciones instantáneas cuando los precios de tus cultivos alcancen el valor que buscas.
-                            Nunca pierdas una oportunidad de venta.
+                            {t('intro')}
                         </p>
                     </motion.div>
 
@@ -119,7 +123,7 @@ export default function PriceAlerts() {
                                 {/* Name */}
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        Nombre Completo *
+                                        {t('form.name_label')}
                                     </label>
                                     <input
                                         type="text"
@@ -127,14 +131,14 @@ export default function PriceAlerts() {
                                         value={formData.name}
                                         onChange={(e) => handleChange('name', e.target.value)}
                                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-terminel-green focus:ring-2 focus:ring-terminel-green/20 transition-all outline-none"
-                                        placeholder="Juan Pérez"
+                                        placeholder={t('form.name_placeholder')}
                                     />
                                 </div>
 
                                 {/* Crop Type */}
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        Cultivo *
+                                        {t('form.crop_label')}
                                     </label>
                                     <select
                                         required
@@ -144,7 +148,7 @@ export default function PriceAlerts() {
                                     >
                                         {crops.map(crop => (
                                             <option key={crop.value} value={crop.value}>
-                                                {crop.label}
+                                                {t(`crops.${crop.value}`)}
                                             </option>
                                         ))}
                                     </select>
@@ -153,7 +157,7 @@ export default function PriceAlerts() {
                                 {/* Email */}
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        Correo Electrónico *
+                                        {t('form.email_label')}
                                     </label>
                                     <input
                                         type="email"
@@ -161,21 +165,21 @@ export default function PriceAlerts() {
                                         value={formData.email}
                                         onChange={(e) => handleChange('email', e.target.value)}
                                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-terminel-green focus:ring-2 focus:ring-terminel-green/20 transition-all outline-none"
-                                        placeholder="juan@ejemplo.com"
+                                        placeholder={t('form.email_placeholder')}
                                     />
                                 </div>
 
                                 {/* Phone */}
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        Teléfono (WhatsApp)
+                                        {t('form.phone_label')}
                                     </label>
                                     <input
                                         type="tel"
                                         value={formData.phone}
                                         onChange={(e) => handleChange('phone', e.target.value)}
                                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-terminel-green focus:ring-2 focus:ring-terminel-green/20 transition-all outline-none"
-                                        placeholder="687 123 4567"
+                                        placeholder={t('form.phone_placeholder')}
                                     />
                                 </div>
                             </div>
@@ -183,7 +187,7 @@ export default function PriceAlerts() {
                             {/* Target Price */}
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                    Precio Objetivo (MXN/ton) *
+                                    {t('form.price_label')}
                                 </label>
                                 <div className="relative">
                                     <TrendingUp className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
@@ -195,50 +199,50 @@ export default function PriceAlerts() {
                                         value={formData.targetPrice}
                                         onChange={(e) => handleChange('targetPrice', e.target.value)}
                                         className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-lg focus:border-terminel-green focus:ring-2 focus:ring-terminel-green/20 transition-all outline-none text-lg font-semibold"
-                                        placeholder="5,500.00"
+                                        placeholder={t('form.price_placeholder')}
                                     />
                                 </div>
                                 <p className="text-sm text-gray-500 mt-2">
-                                    Te notificaremos cuando el precio alcance o supere este valor
+                                    {t('form.price_help')}
                                 </p>
                             </div>
 
                             {/* Notification Type */}
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-4">
-                                    Tipo de Notificación *
+                                    {t('form.notification_label')}
                                 </label>
                                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                     <button
                                         type="button"
                                         onClick={() => handleChange('notificationType', 'email')}
                                         className={`flex items-center justify-center space-x-3 p-4 rounded-xl border-2 transition-all ${formData.notificationType === 'email'
-                                                ? 'border-terminel-green bg-terminel-green/5 text-terminel-green'
-                                                : 'border-gray-200 hover:border-gray-300 text-gray-700'
+                                            ? 'border-terminel-green bg-terminel-green/5 text-terminel-green'
+                                            : 'border-gray-200 hover:border-gray-300 text-gray-700'
                                             }`}
                                     >
                                         <Mail size={20} />
-                                        <span className="font-semibold">Email</span>
+                                        <span className="font-semibold">{t('form.notification_email')}</span>
                                     </button>
 
                                     <button
                                         type="button"
                                         onClick={() => handleChange('notificationType', 'sms')}
                                         className={`flex items-center justify-center space-x-3 p-4 rounded-xl border-2 transition-all ${formData.notificationType === 'sms'
-                                                ? 'border-terminel-green bg-terminel-green/5 text-terminel-green'
-                                                : 'border-gray-200 hover:border-gray-300 text-gray-700'
+                                            ? 'border-terminel-green bg-terminel-green/5 text-terminel-green'
+                                            : 'border-gray-200 hover:border-gray-300 text-gray-700'
                                             }`}
                                     >
                                         <Smartphone size={20} />
-                                        <span className="font-semibold">SMS</span>
+                                        <span className="font-semibold">{t('form.notification_sms')}</span>
                                     </button>
 
                                     <button
                                         type="button"
                                         onClick={() => handleChange('notificationType', 'both')}
                                         className={`flex items-center justify-center space-x-3 p-4 rounded-xl border-2 transition-all ${formData.notificationType === 'both'
-                                                ? 'border-terminel-green bg-terminel-green/5 text-terminel-green'
-                                                : 'border-gray-200 hover:border-gray-300 text-gray-700'
+                                            ? 'border-terminel-green bg-terminel-green/5 text-terminel-green'
+                                            : 'border-gray-200 hover:border-gray-300 text-gray-700'
                                             }`}
                                     >
                                         <div className="flex items-center space-x-1">
@@ -246,7 +250,7 @@ export default function PriceAlerts() {
                                             <span>+</span>
                                             <Smartphone size={16} />
                                         </div>
-                                        <span className="font-semibold">Ambos</span>
+                                        <span className="font-semibold">{t('form.notification_both')}</span>
                                     </button>
                                 </div>
                             </div>
@@ -262,19 +266,19 @@ export default function PriceAlerts() {
                                 {isLoading ? (
                                     <>
                                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                        <span>Suscribiendo...</span>
+                                        <span>{t('form.submitting_button')}</span>
                                     </>
                                 ) : (
                                     <>
                                         <Bell size={20} />
-                                        <span>Activar Alertas</span>
+                                        <span>{t('form.submit_button')}</span>
                                     </>
                                 )}
                             </motion.button>
 
                             {/* Privacy Note */}
                             <p className="text-xs text-center text-gray-500">
-                                Al suscribirte, aceptas recibir notificaciones de precios. Puedes cancelar en cualquier momento.
+                                {t('form.privacy')}
                             </p>
                         </form>
                     </motion.div>
@@ -285,9 +289,9 @@ export default function PriceAlerts() {
                             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                                 <TrendingUp className="text-blue-600" size={24} />
                             </div>
-                            <h4 className="font-heading font-bold text-lg mb-2">Datos en Tiempo Real</h4>
+                            <h4 className="font-heading font-bold text-lg mb-2">{t('features.realtime_title')}</h4>
                             <p className="text-sm text-gray-600">
-                                Precios actualizados cada hora desde mercados nacionales e internacionales.
+                                {t('features.realtime_desc')}
                             </p>
                         </div>
 
@@ -295,9 +299,9 @@ export default function PriceAlerts() {
                             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                                 <Bell className="text-green-600" size={24} />
                             </div>
-                            <h4 className="font-heading font-bold text-lg mb-2">Notificaciones Instantáneas</h4>
+                            <h4 className="font-heading font-bold text-lg mb-2">{t('features.instant_title')}</h4>
                             <p className="text-sm text-gray-600">
-                                Recibe alertas en menos de 5 minutos cuando el precio alcance tu objetivo.
+                                {t('features.instant_desc')}
                             </p>
                         </div>
 
@@ -305,9 +309,9 @@ export default function PriceAlerts() {
                             <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                                 <CheckCircle2 className="text-purple-600" size={24} />
                             </div>
-                            <h4 className="font-heading font-bold text-lg mb-2">100% Gratuito</h4>
+                            <h4 className="font-heading font-bold text-lg mb-2">{t('features.free_title')}</h4>
                             <p className="text-sm text-gray-600">
-                                Sin costos ocultos. Servicio exclusivo para productores asociados a Terminel.
+                                {t('features.free_desc')}
                             </p>
                         </div>
                     </div>

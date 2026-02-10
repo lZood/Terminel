@@ -1,24 +1,31 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronRight } from 'lucide-react'
+import { Menu, X, ChevronRight, User } from 'lucide-react'
 import { usePathname } from 'next/navigation'
-
-const navItems = [
-    { name: 'Nosotros', href: '/nosotros' },
-    { name: 'Servicios', href: '/servicios' },
-    { name: 'Herramientas', href: '/herramientas' },
-    { name: 'Tecnología', href: '/tecnologia' },
-    { name: 'Noticias', href: '/noticias' },
-]
+import { authHelpers } from '@/lib/supabase'
+import LanguageSwitcher from './LanguageSwitcher'
+import { useTranslations } from 'next-intl'
 
 export default function Header() {
+    const t = useTranslations('Header')
+    const router = useRouter();
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
+    const [user, setUser] = useState<any>(null)
     const pathname = usePathname()
+
+    const navItems = [
+        { name: t('nav.about'), href: '/nosotros' },
+        { name: t('nav.services'), href: '/servicios' },
+        { name: t('nav.tools'), href: '/herramientas' },
+        { name: t('nav.technology'), href: '/tecnologia' },
+        { name: t('nav.news'), href: '/noticias' },
+    ]
 
     useEffect(() => {
         const handleScroll = () => {
@@ -27,6 +34,23 @@ export default function Header() {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+
+    // Verificar sesión al montar
+    useEffect(() => {
+        checkSession();
+    }, []);
+
+    const checkSession = async () => {
+        const { user: currentUser } = await authHelpers.getCurrentUser();
+        setUser(currentUser);
+    };
+
+    const handlePortalClick = (e: React.MouseEvent) => {
+        if (user) {
+            e.preventDefault();
+            router.push('/portal/dashboard');
+        }
+    };
 
     return (
         <header
@@ -78,11 +102,17 @@ export default function Header() {
 
                     {/* Right Side: Portal Button & Mobile Menu */}
                     <div className="flex items-center gap-4 relative z-10">
+                        <div className="hidden md:block">
+                            <LanguageSwitcher />
+                        </div>
+
                         <Link
                             href="/portal"
-                            className="hidden md:block bg-gradient-harvest text-terminel-green font-bold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 active:scale-95"
+                            onClick={handlePortalClick}
+                            className="hidden md:flex items-center gap-2 bg-gradient-harvest text-terminel-green font-bold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 active:scale-95"
                         >
-                            Portal Productor
+                            {t('portal_button')}
+                            {user && <User size={18} />}
                         </Link>
 
                         {/* Mobile Menu Button */}
@@ -117,13 +147,16 @@ export default function Header() {
                                     <ChevronRight size={18} />
                                 </Link>
                             ))}
+                            <div className="px-4 py-2">
+                                <LanguageSwitcher />
+                            </div>
                             <div className="pt-4 px-4">
                                 <Link
                                     href="/portal"
                                     className="block w-full bg-gradient-harvest text-terminel-green text-center font-bold py-4 rounded-xl shadow-md"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    Portal Productor
+                                    {t('portal_button')}
                                 </Link>
                             </div>
                         </div>

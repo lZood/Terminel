@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { Newspaper, TrendingUp } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 export default function Hero() {
+    const t = useTranslations('NewsHero')
+
     return (
         <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 bg-gradient-to-br from-terminel-green via-terminel-green-700 to-terminel-green-800 text-white overflow-visible">
             {/* Background Pattern */}
@@ -23,38 +26,37 @@ export default function Hero() {
                         {/* Badge */}
                         <div className="inline-flex items-center space-x-2 bg-harvest-gold text-terminel-green px-6 py-2 rounded-full font-semibold text-sm mb-6">
                             <Newspaper size={18} />
-                            <span>Blog Oficial</span>
+                            <span>{t('badge')}</span>
                         </div>
 
                         {/* Headline */}
                         <h1 className="font-heading font-bold text-5xl sm:text-6xl lg:text-7xl mb-6 leading-tight">
-                            Voz del Campo
+                            {t('title')}
                         </h1>
 
                         <p className="text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-8">
-                            Noticias, actualizaciones y tendencias de Grupo Terminel.
-                            Mantente informado sobre la agroindustria en Sinaloa.
+                            {t('subtitle')}
                         </p>
 
                         {/* Stats */}
                         <div className="flex flex-wrap justify-center gap-8 mt-12">
                             <div className="text-center">
                                 <div className="text-3xl font-heading font-bold text-harvest-gold mb-1">
-                                    55+ años
+                                    {t('years_value')}
                                 </div>
-                                <div className="text-sm text-white/80">De experiencia</div>
+                                <div className="text-sm text-white/80">{t('years_experience')}</div>
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl font-heading font-bold text-harvest-gold mb-1">
                                     400+
                                 </div>
-                                <div className="text-sm text-white/80">Productores aliados</div>
+                                <div className="text-sm text-white/80">{t('producers_allied')}</div>
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl font-heading font-bold text-harvest-gold mb-1">
                                     <TrendingUp className="inline-block" size={28} />
                                 </div>
-                                <div className="text-sm text-white/80">Crecimiento continuo</div>
+                                <div className="text-sm text-white/80">{t('growth')}</div>
                             </div>
                         </div>
                     </motion.div>
