@@ -8,7 +8,8 @@ const MolinoSection = dynamic(() => import('@/components/servicios/MolinoSection
 const LosVallesSection = dynamic(() => import('@/components/servicios/LosVallesSection'))
 const ComplementaryServices = dynamic(() => import('@/components/servicios/ComplementaryServices'))
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params
     const t = await getTranslations({ locale, namespace: 'ServicesPage' })
 
     return {
